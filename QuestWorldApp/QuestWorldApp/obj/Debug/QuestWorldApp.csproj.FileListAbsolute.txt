@@ -1,0 +1,187 @@
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\QuestWorldApp.exe.config
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\QuestWorldApp.exe
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\QuestWorldApp.pdb
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\EntityFramework.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\EntityFramework.SqlServer.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\MaterialDesignColors.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\MaterialDesignThemes.Wpf.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\Microsoft.Xaml.Behaviors.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\Xceed.Wpf.AvalonDock.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\Xceed.Wpf.Toolkit.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\EntityFramework.xml
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\EntityFramework.SqlServer.xml
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\MaterialDesignColors.pdb
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\MaterialDesignThemes.Wpf.pdb
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\MaterialDesignThemes.Wpf.xml
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\Microsoft.Xaml.Behaviors.xml
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\ru\EntityFramework.resources.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\nl-BE\Xceed.Wpf.AvalonDock.resources.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp.csprojAssemblyReference.cache
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\QuestCataloguePage.g.cs
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\LoginWindow.g.cs
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\MainWindow.g.cs
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\MyAccountWindow.g.cs
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\App.g.cs
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp_Content.g.cs
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp_MarkupCompile.cache
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp_MarkupCompile.lref
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\App.baml
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\QuestCataloguePage.baml
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\MainWindow.baml
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\LoginWindow.baml
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\MyAccountWindow.baml
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp.g.resources
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp.Properties.Resources.resources
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp.csproj.GenerateResource.cache
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp.csproj.CoreCompileInputs.cache
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp.csproj.CopyComplete
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp.exe
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp.pdb
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\QuestsPage.g.cs
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\CategoryWindow.g.cs
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\CategoryPage.g.cs
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\CategoryPage.baml
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\QuestsPage.baml
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\CategoryWindow.baml
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\AgesPage.g.cs
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\OrganizersPage.g.cs
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\AgeWindow.g.cs
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\OrganizerWindow.g.cs
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\AgesPage.baml
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\OrganizersPage.baml
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\AgeWindow.baml
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\OrganizerWindow.baml
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\AddQuestPage.g.cs
+h:\SHARE\ДИПЛОМ 2023\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\AddQuestPage.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\QuestWorldApp.exe.config
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\QuestWorldApp.exe
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\QuestWorldApp.pdb
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\EntityFramework.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\MaterialDesignColors.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\Xceed.Wpf.AvalonDock.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\EntityFramework.xml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\MaterialDesignColors.pdb
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\ru\EntityFramework.resources.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\nl-BE\Xceed.Wpf.AvalonDock.resources.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp.csprojAssemblyReference.cache
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\AddQuestPage.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\AgesPage.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\CategoryPage.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\OrganizersPage.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\QuestCataloguePage.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\QuestsPage.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\AgeWindow.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\CategoryWindow.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\LoginWindow.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\MainWindow.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\MyAccountWindow.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\OrganizerWindow.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\App.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp_Content.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp_MarkupCompile.cache
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp_MarkupCompile.lref
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\App.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\AddQuestPage.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\AgesPage.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\CategoryPage.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\OrganizersPage.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\QuestCataloguePage.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\QuestsPage.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\AgeWindow.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\CategoryWindow.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\LoginWindow.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\MainWindow.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\MyAccountWindow.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\OrganizerWindow.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp.g.resources
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp.Properties.Resources.resources
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp.csproj.GenerateResource.cache
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp.csproj.CoreCompileInputs.cache
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp.csproj.CopyComplete
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp.exe
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp.pdb
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\TimeSheetPage.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\TimeSheetPage.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\TimeSheetWindow.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\TimeSheetWindow.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\BookingWindow.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\BookingWindow.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\BookingPage.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\BookingPage.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\AddBookingWindow.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\AddBookingWindow.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\MakeRewiewWindow.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\MakeRewiewWindow.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\MyRewiewPage.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\MyRewiewPage.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\MyBookingPage.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\MyBookingPage.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\AddUserPage.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\UsersPage.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\AddUserPage.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\UsersPage.baml
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\RewiewsPage.g.cs
+C:\DIPLOMS\Мурин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\RewiewsPage.baml
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp.csprojAssemblyReference.cache
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\AddQuestPage.g.cs
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\AddUserPage.g.cs
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\BookingPage.g.cs
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\CategoryPage.g.cs
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\MyBookingPage.g.cs
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\QuestCataloguePage.g.cs
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\QuestsPage.g.cs
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\TimeSheetPage.g.cs
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\Pages\UsersPage.g.cs
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\AddBookingWindow.g.cs
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\BookingWindow.g.cs
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\CategoryWindow.g.cs
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\LoginWindow.g.cs
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\MainWindow.g.cs
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\MyAccountWindow.g.cs
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\Windows\TimeSheetWindow.g.cs
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\App.g.cs
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp_Content.g.cs
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp_MarkupCompile.cache
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp_MarkupCompile.lref
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp.exe
+C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\QuestWorldApp.pdb

@@ -1,0 +1,180 @@
+﻿<Page x:Class="QuestWorldApp.Pages.QuestsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuestWorldApp.Pages"
+       
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Квесты" IsVisibleChanged="Page_IsVisibleChanged"
+     
+      >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <WrapPanel Grid.Row="0" HorizontalAlignment="Stretch"  >
+
+
+            <TextBox Width="275" x:Name="TBoxSearch"  materialDesign:HintAssist.Hint="Введите название квеста" TextChanged="TBoxSearch_TextChanged"
+                         />
+            <ComboBox Width="275" x:Name="ComboOrganizer" FontSize="14" Padding="3" materialDesign:HintAssist.Hint="Организатор" 
+                           DisplayMemberPath="Title" SelectionChanged="ComboOrganizer_SelectionChanged" />
+
+            <ComboBox Width="275" x:Name="ComboCategory" FontSize="14" Padding="3" materialDesign:HintAssist.Hint="Категория" 
+                           DisplayMemberPath="Title" SelectionChanged="ComboCategory_SelectionChanged"/>
+
+            <ComboBox Width="275" x:Name="ComboAge" FontSize="14" Padding="3" materialDesign:HintAssist.Hint="Возрастная категория" 
+                           DisplayMemberPath="Title"  SelectionChanged="ComboAge_SelectionChanged"/>
+
+
+
+            <ComboBox Width="275" materialDesign:HintAssist.Hint="Сортировать по"
+                          x:Name="ComboSort" SelectionChanged="ComboSort_SelectionChanged"
+                          Margin="10 0 0 0" >
+                <ComboBoxItem >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Название"/>
+                        <materialDesign:PackIcon Kind="SortAscending" Margin="5 0 0 0"/>
+                    </StackPanel>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Название"/>
+                        <materialDesign:PackIcon Kind="SortDescending" Margin="5 0 0 0"/>
+                    </StackPanel>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Рейтинг"/>
+                        <materialDesign:PackIcon Kind="SortNumericAscendingVariant" Margin="5 0 0 0"/>
+                    </StackPanel>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Рейтинг"/>
+                        <materialDesign:PackIcon Kind="SortNumericDescendingVariant" Margin="5 0 0 0"/>
+                    </StackPanel>
+                </ComboBoxItem>
+            </ComboBox>
+
+        </WrapPanel>
+        <DataGrid x:Name="DataGridGood" Grid.Row="1"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  Style="{DynamicResource MaterialDesignDataGrid}" >
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="100" Header="Фото">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Path=GetPhoto}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Binding="{Binding Title}" Header="Название" Width="*"/>
+            
+                <DataGridTextColumn Binding="{Binding GetPeopleCount}" Header="Игроков" />
+                <DataGridTextColumn Binding="{Binding Duration}" Header="Время" />
+                <!--//<DataGridTextColumn Binding="{Binding FearLevel}" Header="{materialDesign:PackIcon Kind=Halloween}" />-->
+                <DataGridTemplateColumn Width="auto"  Header="Уровень страха">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <materialDesign:RatingBar  x:Name="ratingBarFearLevel" IsReadOnly="True"  HorizontalAlignment="Center" Max="{Binding FearLevel}"  Orientation="Vertical"  Value="{Binding FearLevel}">
+                                <materialDesign:RatingBar.ValueItemTemplate>
+                                    <DataTemplate DataType="system:Int32">
+                                        <Grid>
+                                            <materialDesign:PackIcon Width="24"  Height="24"   Kind="SkullCrossbones" />
+                                            <TextBlock HorizontalAlignment="Center"  VerticalAlignment="Center"  FontSize="8"  Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"   Text="{Binding}" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </materialDesign:RatingBar.ValueItemTemplate>
+                            </materialDesign:RatingBar>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="auto"  Header="Сложность">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <materialDesign:RatingBar   x:Name="ratingBarComplexity" IsReadOnly="True"  HorizontalAlignment="Center"  Max="{Binding Complexity}"  Orientation="Vertical"  Value="{Binding Complexity}">
+                                <materialDesign:RatingBar.ValueItemTemplate>
+                                    <DataTemplate DataType="system:Int32">
+                                        <Grid>
+                                            <materialDesign:PackIcon Width="24"  Height="24"   Kind="Key" />
+                                            <TextBlock HorizontalAlignment="Center"  VerticalAlignment="Center"  FontSize="8"  Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"   Text="{Binding}" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </materialDesign:RatingBar.ValueItemTemplate>
+                            </materialDesign:RatingBar>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTextColumn Binding="{Binding Age.Title}" Header="Возраст" />
+
+                <DataGridTemplateColumn Width="auto" Header="Изменить">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnEdit"  Margin="0" Click="BtnEdit_Click">
+                                <materialDesign:PackIcon Kind="Edit" />
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+                <DataGridTemplateColumn Width="auto" Header="Расписание">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnTimeTable"  Margin="0" Click="BtnTimeTable_Click">
+                                <materialDesign:PackIcon Kind="Timelapse" />
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
+            <Button x:Name="BtnOrganizers" 
+                 Click="BtnOrganizers_Click" ToolTip="Организаторы">
+                <materialDesign:PackIcon  Kind="Company" Padding="0"/>
+
+            </Button>
+            <Button x:Name="BtnCategories" 
+                 Click="BtnCategories_Click" ToolTip="Категории квестов">
+                <materialDesign:PackIcon  Kind="FormatListBulletedType" Padding="0"/>
+
+            </Button>
+            <Button x:Name="BtnAges" 
+                 Click="BtnAges_Click"
+             ToolTip="Возрастные категории">
+                <materialDesign:PackIcon  Kind="Numbers" Padding="0"/>
+
+            </Button>
+
+
+
+
+
+
+
+
+            <Button x:Name="BtnAdd" Grid.Row="1" Width="Auto"  
+                Content="{materialDesign:PackIcon Kind=Add}" ToolTip="Добавить" Click="BtnAdd_Click"  />
+            <Button x:Name="BtnDelete" Grid.Row="1" Width="Auto" Margin="3"
+                Content="{materialDesign:PackIcon Kind=Delete}" ToolTip="Удалить" />
+        </StackPanel>
+
+
+        <TextBlock Grid.Row="2" x:Name="TextBlockCount" Width="300" HorizontalAlignment="Left" />
+
+      
+
+    </Grid>
+</Page>
