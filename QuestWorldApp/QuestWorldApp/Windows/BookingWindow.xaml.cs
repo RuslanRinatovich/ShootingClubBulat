@@ -21,11 +21,11 @@ namespace QuestWorldApp.Windows
     public partial class BookingWindow : Window
     {
         Weapon currentQuest = new Weapon();
-        public BookingWindow(Weapon quest)
+        public BookingWindow(Weapon weapon)
         {
             InitializeComponent();
-            //currentQuest = quest;
-            //ComboBoxTimeSheet.ItemsSource = ShootingClubBDEntities.GetContext().TimeSheets.Where(p => p.QuestId == quest.Id && p.Orders.Count == 0).ToList();
+            //currentQuest = weapon;
+            //ComboBoxTimeSheet.ItemsSource = ShootingClubBDEntities.GetContext().TimeSheets.Where(p => p.QuestId == weapon.Id && p.Orders.Count == 0).ToList();
             //if (Manager.CurrentUser != null)
             //{
             //    TbPhone.Text = Manager.CurrentUser.Phone;

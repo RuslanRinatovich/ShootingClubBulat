@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище ShootingClubBDModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище ShootingClubDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="Id" />
@@ -18,7 +18,7 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Username" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="DateOrder" Type="date" Nullable="false" />
+          <Property Name="DateOrder" Type="datetime" Nullable="false" />
           <Property Name="Total" Type="int" Nullable="false" />
           <Property Name="Paid" Type="bit" Nullable="false" />
         </EntityType>
@@ -29,6 +29,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderId" Type="int" Nullable="false" />
           <Property Name="PriceListId" Type="int" Nullable="false" />
+          <Property Name="Count" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Pricelist">
           <Key>
@@ -173,7 +174,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище ShootingClubBDModelContainer">
+        <EntityContainer Name="Хранилище ShootingClubDBModelContainer">
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderService" EntityType="Self.OrderService" Schema="dbo" store:Type="Tables" />
@@ -216,7 +217,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ShootingClubBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ShootingClubDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="Id" />
@@ -231,7 +232,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DateOrder" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateOrder" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Total" Type="Int32" Nullable="false" />
           <Property Name="Paid" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="User" Relationship="Self.FK_Order_User" FromRole="Order" ToRole="User" />
@@ -244,6 +245,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="OrderId" Type="Int32" Nullable="false" />
           <Property Name="PriceListId" Type="Int32" Nullable="false" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Order" Relationship="Self.FK_OrderService_Order" FromRole="OrderService" ToRole="Order" />
           <NavigationProperty Name="Pricelist" Relationship="Self.FK_OrderService_Pricelist" FromRole="OrderService" ToRole="Pricelist" />
         </EntityType>
@@ -443,9 +445,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище ShootingClubBDModelContainer" CdmEntityContainer="ShootingClubBDEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ShootingClubDBModelContainer" CdmEntityContainer="ShootingClubBDEntities">
           <EntitySetMapping Name="Categories">
-            <EntityTypeMapping TypeName="ShootingClubBDModel.Category">
+            <EntityTypeMapping TypeName="ShootingClubDBModel.Category">
               <MappingFragment StoreEntitySet="Category">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -453,7 +455,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="ShootingClubBDModel.Order">
+            <EntityTypeMapping TypeName="ShootingClubDBModel.Order">
               <MappingFragment StoreEntitySet="Order">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
@@ -464,16 +466,17 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrderServices">
-            <EntityTypeMapping TypeName="ShootingClubBDModel.OrderService">
+            <EntityTypeMapping TypeName="ShootingClubDBModel.OrderService">
               <MappingFragment StoreEntitySet="OrderService">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="OrderId" ColumnName="OrderId" />
                 <ScalarProperty Name="PriceListId" ColumnName="PriceListId" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Pricelists">
-            <EntityTypeMapping TypeName="ShootingClubBDModel.Pricelist">
+            <EntityTypeMapping TypeName="ShootingClubDBModel.Pricelist">
               <MappingFragment StoreEntitySet="Pricelist">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
@@ -483,7 +486,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Roles">
-            <EntityTypeMapping TypeName="ShootingClubBDModel.Role">
+            <EntityTypeMapping TypeName="ShootingClubDBModel.Role">
               <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -491,7 +494,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Services">
-            <EntityTypeMapping TypeName="ShootingClubBDModel.Service">
+            <EntityTypeMapping TypeName="ShootingClubDBModel.Service">
               <MappingFragment StoreEntitySet="Service">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -499,7 +502,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="ShootingClubBDModel.sysdiagram">
+            <EntityTypeMapping TypeName="ShootingClubDBModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -510,7 +513,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="ShootingClubBDModel.User">
+            <EntityTypeMapping TypeName="ShootingClubDBModel.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
@@ -524,7 +527,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Weapons">
-            <EntityTypeMapping TypeName="ShootingClubBDModel.Weapon">
+            <EntityTypeMapping TypeName="ShootingClubDBModel.Weapon">
               <MappingFragment StoreEntitySet="Weapon">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />

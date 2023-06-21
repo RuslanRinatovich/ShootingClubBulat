@@ -29,11 +29,11 @@
                     <TextBlock       Margin="16,0"       VerticalAlignment="Center"   Text="Стрелковый клуб ''Булат''" Style="{StaticResource MaterialDesignHeadline5TextBlock}" />
 
                     <Button x:Name="BtnQuests"  Click="BtnQuests_Click" 
-                            ToolTip="Квесты" Style="{StaticResource MaterialDesignFlatButton}"
-                            Content="{materialDesign:PackIcon Kind=Puzzle, Size=24}" Visibility="Collapsed"/>
+                            ToolTip="Оружие" Style="{StaticResource MaterialDesignFlatButton}"
+                            Content="{materialDesign:PackIcon Kind=Pistol, Size=24}" Visibility="Collapsed"/>
 
                     <Button x:Name="BtnBooking"  Click="BtnBooking_Click" Visibility="Collapsed"
-                            ToolTip="Бронирование квестов" Style="{StaticResource MaterialDesignFlatButton}"
+                            ToolTip="Бронирование" Style="{StaticResource MaterialDesignFlatButton}"
                             Content="{materialDesign:PackIcon Kind=BookAccount, Size=24}"/>
                    
 
@@ -44,7 +44,7 @@
                     
                   
                     <Button x:Name="BtnMyBooking"  Click="BtnMyOrders_Click" Visibility="Collapsed"
-                            ToolTip="Мои квесты"
+                            ToolTip="Мои брони"
                             Style="{StaticResource MaterialDesignFlatButton}"
                             Content="{materialDesign:PackIcon Kind=Book, Size=24}"
                             />
@@ -55,6 +55,7 @@
 
                 </StackPanel>
                 <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right">
+                    
                     <Button x:Name="BtnMyAccount"  Click="BtnMyAccount_Click" ToolTip="Мой профиль"
                              Style="{StaticResource MaterialDesignFlatButton}" Visibility="Collapsed"
                             Content="{materialDesign:PackIcon Kind=Account, Size=24}"

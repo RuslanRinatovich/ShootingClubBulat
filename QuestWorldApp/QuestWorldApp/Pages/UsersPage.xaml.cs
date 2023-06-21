@@ -42,6 +42,7 @@ namespace QuestWorldApp.Pages
 
             DataGridData.ItemsSource = null;
             //загрузка обновленных данных
+            
             ShootingClubBDEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             data = ShootingClubBDEntities.GetContext().Users.OrderBy(p => p.LastName).ThenBy(p => p.FirstName).ToList();
             DataGridData.ItemsSource = data;
@@ -81,6 +82,10 @@ namespace QuestWorldApp.Pages
             // удаление выбранного товара из таблицы
             //получаем все выделенные товары
             var selected = (sender as Button).DataContext as User;
+
+            string username = Manager.CurrentUser.Username;
+            if (selected.Username == username)
+                return;
             // вывод сообщения с вопросом Удалить запись?
             MessageBoxResult messageBoxResult = MessageBox.Show($"Удалить  запись???",
                 "Удаление", MessageBoxButton.OKCancel, MessageBoxImage.Question);

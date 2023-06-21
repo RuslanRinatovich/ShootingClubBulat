@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-          Title="Расписание" Height="260" Width="800"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded_1">
+          Title="Расписание" Height="260" Width="800"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
@@ -21,13 +21,13 @@
 
 
 
-
-        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBlock x:Name="TextBlockAnswer" VerticalAlignment="Center" Style="{DynamicResource  MaterialDesignCaptionTextBlock}"/>
-        </StackPanel>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Услуга"   Margin="20 0 0 0"  VerticalAlignment="Center" />
+        <ComboBox x:Name="ComboService"  SelectedItem="{Binding Service}" 
+                  Grid.Row="0" Grid.Column="1"  DisplayMemberPath="Title"
+                  SelectedValuePath="Id" />
 
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Стоимость"   Margin="20 0 0 0"  VerticalAlignment="Center" />
-        <xctk:DoubleUpDown Grid.Row="1" Grid.Column="1" x:Name="DoubleUpDownPrice" FormatString="c" />
+        <xctk:DoubleUpDown Grid.Row="1" Grid.Column="1" x:Name="DoubleUpDownPrice" FormatString="c" Value="{Binding Price}"/>
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="5" Grid.ColumnSpan="2" Margin="127,0,103,0" Width="162">
             <Button IsDefault="True"  MinWidth="60" Margin="5" Click="Button_Click">OK</Button>
             <Button IsCancel="True" MinWidth="60" Margin="5">Отмена</Button>

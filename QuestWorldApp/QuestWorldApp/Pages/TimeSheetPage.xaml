@@ -29,50 +29,38 @@
         </StackPanel>
         <Grid x:Name="GridGood" Width="300" Grid.Row="1" Grid.Column="0">
             <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
                 <RowDefinition Height="260" />
 
-                <RowDefinition Height="auto" />
+            
             </Grid.RowDefinitions>
 
-            <Image  Grid.Row="0" Stretch="Uniform" VerticalAlignment="Top"
+            <Image  Grid.Row="1" Stretch="Uniform" VerticalAlignment="Top"
                                HorizontalAlignment="Center" 
                                Source="{Binding Path=GetPhoto}"/>
-            <StackPanel  Grid.Row="0"      HorizontalAlignment="Right" >
-                <materialDesign:RatingBar   Margin="0 10 5 5"
-                                                       IsReadOnly="True"   HorizontalAlignment="Right"
-                                                       Max="{Binding FearLevel}" 
-                                                       Orientation="Horizontal" 
-                                                       Value="{Binding FearLevel}">
-                    <materialDesign:RatingBar.ValueItemTemplate>
-                        <DataTemplate DataType="system:Int32">
-                            <Grid>
-                                <materialDesign:PackIcon Width="24"  Height="24"   Kind="SkullCrossbones"  Foreground="White" />
-                            </Grid>
-                        </DataTemplate>
-                    </materialDesign:RatingBar.ValueItemTemplate>
-                </materialDesign:RatingBar>
-                <materialDesign:RatingBar   Margin="0 0 5 5"
-                                                       IsReadOnly="True"  HorizontalAlignment="Right"
-                                                       Max="{Binding Complexity}" 
-                                                       Orientation="Horizontal" 
-                                                       Value="{Binding Complexity}">
-                    <materialDesign:RatingBar.ValueItemTemplate>
-                        <DataTemplate DataType="system:Int32">
-                            <Grid>
-                                <materialDesign:PackIcon Width="24"  Height="24"   Kind="Key" Foreground="White" />
-                            </Grid>
-                        </DataTemplate>
-                    </materialDesign:RatingBar.ValueItemTemplate>
-                </materialDesign:RatingBar>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 5 5">
-                    <materialDesign:PackIcon Width="24"  Height="24"   Kind="Man" Foreground="White" />
-                    <TextBlock Text="{Binding GetPeopleCount}" Foreground="White" FontSize="16" FontWeight="Bold"/>
-                </StackPanel>
-                <TextBlock Text="{Binding Age.Title}" Foreground="White" FontSize="18" FontWeight="Bold" HorizontalAlignment="Right" Margin="0 0 5 5"/>
+            <StackPanel  Grid.Row="1" Margin="20 0 0 0"     HorizontalAlignment="Left" VerticalAlignment="Bottom" >
+                <Grid Width="auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <materialDesign:PackIcon Kind="DiameterVariant" Height="24"  Grid.Row="0" Margin="3"/>
+                    <TextBlock  Grid.Row="0" Grid.Column="1" Text="{Binding Сaliber, StringFormat={}{0} мм.}" Margin="3" FontSize="16" FontWeight="Bold" />
+                    <materialDesign:PackIcon Kind="Ammunition" Height="24" Grid.Row="1" Margin="3"/>
+                    <TextBlock  Grid.Row="1" Grid.Column="1" Text="{Binding MagazineSize, StringFormat={}{0} патронов}" Margin="3" FontSize="16" FontWeight="Bold" />
+                    <materialDesign:PackIcon Kind="Weight"  Height="24" Grid.Row="2" Margin="3"/>
+                    <TextBlock  Grid.Row="2" Grid.Column="1" Text="{Binding Weight, StringFormat={}{0} г.}"  Margin="3" FontSize="16" FontWeight="Bold" />
+                </Grid>
             </StackPanel>
-
-
-            <materialDesign:RatingBar Grid.Row="2"  x:Name="RatingBarRate" Margin="10 0 0 0" HorizontalAlignment="Right" IsReadOnly="True"  Value="{Binding GetRate}" />
+            <TextBox  Grid.Row="0"   Text="{Binding Title}" HorizontalAlignment="Center" TextWrapping="Wrap"
+                                                 FontWeight="Bold" Margin="10" IsReadOnly="True" HorizontalContentAlignment="Center"
+                                      
+                                                FontSize="18"/>
 
 
         </Grid>

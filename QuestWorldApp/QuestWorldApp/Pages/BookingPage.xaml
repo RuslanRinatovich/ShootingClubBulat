@@ -47,7 +47,7 @@
                 <DataGridTextColumn Binding="{Binding Id}" Header="Заказ" />
                 <DataGridTextColumn Binding="{Binding User.GetFIO}" Header="Клиент" Width="*"/>
                 <DataGridTextColumn Binding="{Binding Total, StringFormat='c', ConverterCulture='ru-RU'}" Header="Стоимость" Width="*"/>
-                <DataGridTextColumn Binding="{Binding DateOrder, StringFormat='d', ConverterCulture='ru-RU'}" Header="Дата" Width="*"/>
+                <DataGridTextColumn Binding="{Binding DateOrder, StringFormat='f', ConverterCulture='ru-RU'}" Header="Дата" Width="*"/>
                 <DataGridTemplateColumn Width="auto" Header="Оплачен">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -60,7 +60,7 @@
                 <DataGridTemplateColumn Width="auto" Header="Просмотр">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="BtnEdit"  Content="{materialDesign:PackIcon Kind=Edit}" Click="BtnEdit_Click" Margin="0"/>
+                            <Button x:Name="BtnEdit"  Content="{materialDesign:PackIcon Kind=Edit}" Click="BtnShow_Click" Margin="0"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

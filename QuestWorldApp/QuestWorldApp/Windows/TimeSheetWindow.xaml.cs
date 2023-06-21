@@ -20,20 +20,21 @@ namespace QuestWorldApp.Windows
     /// </summary>
     public partial class TimeSheetWindow : Window
     {
-        public TimeSheet currentItem { get; private set; }
-        Weapon quest;
+        public Pricelist currentItem { get; private set; }
+        Weapon weapon;
 
 
-        public TimeSheetWindow(TimeSheet p, Weapon g)
+        public TimeSheetWindow(Pricelist p, Weapon g)
         {
             InitializeComponent();
 
 
+            List<Service> services = ShootingClubBDEntities.GetContext().Services.OrderBy(x => x.Title).ToList();
             currentItem = p;
-            //  currentItem.TrainerId = g.Id;
-            quest = g;
+            currentItem.WeaponId = g.Id;
 
-             DataContext = currentItem;
+            ComboService.ItemsSource = services;
+            DataContext = currentItem;
 
         }
 
@@ -41,52 +42,37 @@ namespace QuestWorldApp.Windows
         private StringBuilder CheckFields()
         {
             StringBuilder s = new StringBuilder();
-          
 
-            if (DatePickerDate.SelectedDate is null)
-                s.AppendLine("Не выбрана дата");
-            if (TimePickerTime.SelectedTime is null)
-                s.AppendLine("Укажите время");
+
+            if (ComboService.SelectedIndex == -1)
+                s.AppendLine("Не выбрана услуга");
 
             return s;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //StringBuilder _error = CheckFields();
-            //// если ошибки есть, то выводим ошибки в MessageBox
-            //// и прерываем выполнение 
-            //if (_error.Length > 0)
-            //{
-            //    MessageBox.Show(_error.ToString());
-            //    return;
-            //}
-            ////currentItem.CategoryId = Convert.ToInt32(ComboCategory.SelectedValue);
-            //currentItem.Date = Convert.ToDateTime(DatePickerDate.SelectedDate).Date;
-            //currentItem.Time = Convert.ToDateTime(TimePickerTime.SelectedTime).TimeOfDay;
-            //currentItem.Price = Convert.ToDouble(DoubleUpDownPrice.Value);
-            //currentItem.QuestId = quest.Id;
-            //this.DialogResult = true;
+            StringBuilder _error = CheckFields();
+            // если ошибки есть, то выводим ошибки в MessageBox
+            // и прерываем выполнение 
+            if (_error.Length > 0)
+            {
+                MessageBox.Show(_error.ToString());
+                return;
+            }
+
+            currentItem.ServiceId = (ComboService.SelectedItem as Service).Id;
+            this.DialogResult = true;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            if (currentItem.Id != 0)
+            {
+                Service s = ShootingClubBDEntities.GetContext().Services.FirstOrDefault(x => x.Id == currentItem.ServiceId);
+                
+                ComboService.Text = s.Title;
+            }
         }
 
-        private void Window_Loaded_1(object sender, RoutedEventArgs e)
-        {
-            //DoubleUpDownPrice.Value = currentItem.Price;
-            //if (currentItem.Id == 0)
-            //{
-            //    DatePickerDate.SelectedDate = DateTime.Today;
-            //    TimePickerTime.SelectedTime = DateTime.Today;
-            //}
-            //else
-            //{
-            //    DatePickerDate.SelectedDate = Convert.ToDateTime(currentItem.Date);
-            //    TimePickerTime.SelectedTime = Convert.ToDateTime(currentItem.Time.ToString());
-            //}
-            
-        }
     }
 }

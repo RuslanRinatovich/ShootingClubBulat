@@ -114,23 +114,12 @@ namespace QuestWorldApp.Pages
             UpdateData();
         }
 
-        private void BtnMoreInfo_Click(object sender, RoutedEventArgs e)
-        {
-            Weapon quest = (sender as Button).DataContext as Weapon;
-            DialogHostMoreInformation.DataContext = quest;
-            DialogHostMoreInformation.IsOpen = true;
-        }
-
-        private void BtnOk_Click(object sender, RoutedEventArgs e)
-        {
-
-            DialogHostMoreInformation.IsOpen = false;
-        }
+      
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Weapon quest = (sender as Button).DataContext as Weapon;
-            BookingWindow bookingWindow = new BookingWindow(quest);
+            Weapon weapon = (sender as Button).DataContext as Weapon;
+            BookingWindow bookingWindow = new BookingWindow(weapon);
             bookingWindow.ShowDialog();
         }
 
@@ -144,5 +133,38 @@ namespace QuestWorldApp.Pages
             }
         }
 
+        private void BtnBasket_Click(object sender, RoutedEventArgs e)
+        {
+            // кнопка Корзина
+            NewOrderWindow newOrderWindow = new NewOrderWindow();
+            newOrderWindow.ShowDialog();
+            if (Basket.GetCount > 0)
+            {
+                BtnBasket.Visibility = Visibility.Visible;
+                TextBlockBasketInfo.Visibility = Visibility.Visible;
+                BadgeBasketCount.Badge = Basket.GetCount;
+            }
+            else
+            {
+                BadgeBasketCount.Badge = "";
+                BtnBasket.Visibility = Visibility.Collapsed;
+                TextBlockBasketInfo.Visibility = Visibility.Collapsed;
+            }
+
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Pricelist _selectedProduct = (sender as Button).DataContext as Pricelist;
+            Basket.AddProductInBasket(_selectedProduct);
+            // отображаем кнопку и текстовое поле
+            if (Basket.GetCount > 0)
+            {
+                BtnBasket.Visibility = Visibility.Visible;
+                TextBlockBasketInfo.Visibility = Visibility.Visible;
+                TextBlockBasketInfo.Text = $"В корзине {Basket.GetCount} товаров";
+                BadgeBasketCount.Badge = Basket.GetCount;
+            }
+        }
     }
 }

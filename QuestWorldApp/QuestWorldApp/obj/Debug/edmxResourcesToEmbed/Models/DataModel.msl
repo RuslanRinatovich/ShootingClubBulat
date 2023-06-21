@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище ShootingClubBDModelContainer" CdmEntityContainer="ShootingClubBDEntities">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ShootingClubDBModelContainer" CdmEntityContainer="ShootingClubBDEntities">
     <EntitySetMapping Name="Categories">
-      <EntityTypeMapping TypeName="ShootingClubBDModel.Category">
+      <EntityTypeMapping TypeName="ShootingClubDBModel.Category">
         <MappingFragment StoreEntitySet="Category">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Title" ColumnName="Title" />
@@ -10,7 +10,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Orders">
-      <EntityTypeMapping TypeName="ShootingClubBDModel.Order">
+      <EntityTypeMapping TypeName="ShootingClubDBModel.Order">
         <MappingFragment StoreEntitySet="Order">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Username" ColumnName="Username" />
@@ -21,16 +21,17 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="OrderServices">
-      <EntityTypeMapping TypeName="ShootingClubBDModel.OrderService">
+      <EntityTypeMapping TypeName="ShootingClubDBModel.OrderService">
         <MappingFragment StoreEntitySet="OrderService">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="OrderId" ColumnName="OrderId" />
           <ScalarProperty Name="PriceListId" ColumnName="PriceListId" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Pricelists">
-      <EntityTypeMapping TypeName="ShootingClubBDModel.Pricelist">
+      <EntityTypeMapping TypeName="ShootingClubDBModel.Pricelist">
         <MappingFragment StoreEntitySet="Pricelist">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
@@ -40,7 +41,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Roles">
-      <EntityTypeMapping TypeName="ShootingClubBDModel.Role">
+      <EntityTypeMapping TypeName="ShootingClubDBModel.Role">
         <MappingFragment StoreEntitySet="Role">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Title" ColumnName="Title" />
@@ -48,7 +49,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Services">
-      <EntityTypeMapping TypeName="ShootingClubBDModel.Service">
+      <EntityTypeMapping TypeName="ShootingClubDBModel.Service">
         <MappingFragment StoreEntitySet="Service">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Title" ColumnName="Title" />
@@ -56,7 +57,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="ShootingClubBDModel.sysdiagram">
+      <EntityTypeMapping TypeName="ShootingClubDBModel.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -67,7 +68,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="ShootingClubBDModel.User">
+      <EntityTypeMapping TypeName="ShootingClubDBModel.User">
         <MappingFragment StoreEntitySet="User">
           <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="Password" ColumnName="Password" />
@@ -81,7 +82,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Weapons">
-      <EntityTypeMapping TypeName="ShootingClubBDModel.Weapon">
+      <EntityTypeMapping TypeName="ShootingClubDBModel.Weapon">
         <MappingFragment StoreEntitySet="Weapon">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Title" ColumnName="Title" />

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="Хранилище ShootingClubBDModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="Хранилище ShootingClubDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Category">
     <Key>
       <PropertyRef Name="Id" />
@@ -13,7 +13,7 @@
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="Username" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="DateOrder" Type="date" Nullable="false" />
+    <Property Name="DateOrder" Type="datetime" Nullable="false" />
     <Property Name="Total" Type="int" Nullable="false" />
     <Property Name="Paid" Type="bit" Nullable="false" />
   </EntityType>
@@ -24,6 +24,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="OrderId" Type="int" Nullable="false" />
     <Property Name="PriceListId" Type="int" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Pricelist">
     <Key>
@@ -168,7 +169,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="Хранилище ShootingClubBDModelContainer">
+  <EntityContainer Name="Хранилище ShootingClubDBModelContainer">
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OrderService" EntityType="Self.OrderService" Schema="dbo" store:Type="Tables" />

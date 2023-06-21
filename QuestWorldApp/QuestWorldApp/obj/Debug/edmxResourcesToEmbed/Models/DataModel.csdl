@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="ShootingClubBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="ShootingClubDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Category">
     <Key>
       <PropertyRef Name="Id" />
@@ -14,7 +14,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="DateOrder" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateOrder" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Total" Type="Int32" Nullable="false" />
     <Property Name="Paid" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="User" Relationship="Self.FK_Order_User" FromRole="Order" ToRole="User" />
@@ -27,6 +27,7 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="OrderId" Type="Int32" Nullable="false" />
     <Property Name="PriceListId" Type="Int32" Nullable="false" />
+    <Property Name="Count" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Order" Relationship="Self.FK_OrderService_Order" FromRole="OrderService" ToRole="Order" />
     <NavigationProperty Name="Pricelist" Relationship="Self.FK_OrderService_Pricelist" FromRole="OrderService" ToRole="Pricelist" />
   </EntityType>

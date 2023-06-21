@@ -45,30 +45,22 @@
                   LoadingRow="DataGridGoodLoadingRow">
             <DataGrid.Columns>
 
-                <DataGridTextColumn Binding="{Binding Id}" Header="Заказ" />
+                <DataGridTextColumn Binding="{Binding Id}" Header="Заказ"  Width="auto" />
                 <DataGridTextColumn Binding="{Binding User.GetFIO}" Header="Клиент" Width="*"/>
-                <DataGridTextColumn Binding="{Binding Total, StringFormat='c', ConverterCulture='ru-RU'}" Header="Стоимость" Width="*"/>
-                <DataGridTextColumn Binding="{Binding DateOrder, StringFormat='d', ConverterCulture='ru-RU'}" Header="Дата" Width="*"/>
-                <DataGridTemplateColumn Width="auto" Header="Оплачен">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <ToggleButton   Content="NO"   IsChecked="{Binding Paid}"  
-                                            Style="{StaticResource MaterialDesignActionLightToggleButton}"
-                                            ToolTip="Оплачен"  />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                <DataGridTextColumn Binding="{Binding Total, StringFormat='c', ConverterCulture='ru-RU'}" Header="Стоимость" Width="auto"/>
+                <DataGridTextColumn Binding="{Binding DateOrder, StringFormat='f', ConverterCulture='ru-RU'}" Header="Дата" Width="auto"/>
+                <DataGridCheckBoxColumn Binding="{Binding Paid}" IsReadOnly="True" Header="Оплачен" Width="auto"/>
                 <DataGridTemplateColumn Width="auto" Header="Просмотр">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="BtnEdit"  Content="{materialDesign:PackIcon Kind=Edit}"  Margin="0"/>
+                            <Button x:Name="BtnShow"  Content="{materialDesign:PackIcon Kind=Edit}"  Margin="0" Click="BtnShow_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Width="auto" Header="Удалить">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="BtnDelete"  Content="{materialDesign:PackIcon Kind=Delete}"  Margin="0"/>
+                            <Button x:Name="BtnDelete"  Click="BtnDeleteClick" Content="{materialDesign:PackIcon Kind=Delete}"  Margin="0"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

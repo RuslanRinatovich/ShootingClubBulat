@@ -88,7 +88,7 @@ namespace QuestWorldApp.Windows
             User user = new User();
             user.Username = tbRegLogin.Text;
             user.Password = psbPassword1.Password;
-            user.RoleId = 3;
+            user.RoleId = 2;
             user.FirstName = "";
             user.LastName = "";
             user.MiddleName = "";

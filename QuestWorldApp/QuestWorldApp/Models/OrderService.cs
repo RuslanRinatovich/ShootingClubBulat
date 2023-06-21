@@ -17,6 +17,7 @@ namespace QuestWorldApp.Models
         public int Id { get; set; }
         public int OrderId { get; set; }
         public int PriceListId { get; set; }
+        public int Count { get; set; }
     
         public virtual Order Order { get; set; }
         public virtual Pricelist Pricelist { get; set; }

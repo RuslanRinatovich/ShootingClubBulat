@@ -66,6 +66,7 @@ namespace QuestWorldApp.Pages
             // удаление выбранного товара из таблицы
             //получаем все выделенные товары
             Order selected = (sender as Button).DataContext as Order;
+           
             // вывод сообщения с вопросом Удалить запись?
             MessageBoxResult messageBoxResult = MessageBox.Show($"Удалить запись???",
                 "Удаление", MessageBoxButton.OKCancel, MessageBoxImage.Question);
@@ -77,7 +78,7 @@ namespace QuestWorldApp.Pages
 
                     // проверка, есть ли у товара в таблице о продажах связанные записи
                     // если да, то выбрасывается исключение и удаление прерывается
-                   
+                    ShootingClubBDEntities.GetContext().OrderServices.RemoveRange(selected.OrderServices);
 
                     ShootingClubBDEntities.GetContext().Orders.Remove(selected);
                     //сохраняем изменения
@@ -140,6 +141,14 @@ namespace QuestWorldApp.Pages
         private void ComboSortSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateData();
+        }
+
+        private void BtnShow_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new ShowOrderPage((sender as Button).DataContext as Order));
+
+
+
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)

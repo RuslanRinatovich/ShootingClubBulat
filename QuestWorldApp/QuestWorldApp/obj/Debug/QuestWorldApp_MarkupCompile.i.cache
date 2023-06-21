@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-c:\Users\Main\Documents\ЗМК\ДИПЛОМ2023\Хабибуллин Б\QuestWorldApp\QuestWorldApp\obj\Debug\
+d:\ДИПЛОМ 2023\Хабибуллин Булат\QuestWorldApp\QuestWorldApp\obj\Debug\
 QuestWorldApp
 none
 false
 DEBUG;TRACE
-c:\Users\Main\Documents\ЗМК\ДИПЛОМ2023\Хабибуллин Б\QuestWorldApp\QuestWorldApp\App.xaml
-16679702179
+d:\ДИПЛОМ 2023\Хабибуллин Булат\QuestWorldApp\QuestWorldApp\App.xaml
+19346156415
 2-1890902742
-422098494538
-27657774138
-Pages\AddQuestPage.xaml;Pages\AddUserPage.xaml;Pages\BookingPage.xaml;Pages\CategoryPage.xaml;Pages\MyBookingPage.xaml;Pages\QuestCataloguePage.xaml;Pages\QuestsPage.xaml;Pages\TimeSheetPage.xaml;Pages\UsersPage.xaml;Windows\AddBookingWindow.xaml;Windows\BookingWindow.xaml;Windows\CategoryWindow.xaml;Windows\LoginWindow.xaml;Windows\MainWindow.xaml;Windows\MyAccountWindow.xaml;Windows\TimeSheetWindow.xaml;
+44-1534052380
+30-1437109205
+Pages\AddQuestPage.xaml;Pages\AddUserPage.xaml;Pages\BookingPage.xaml;Pages\CategoryPage.xaml;Pages\MyBookingPage.xaml;Pages\QuestCataloguePage.xaml;Pages\QuestsPage.xaml;Pages\ShowOrderPage.xaml;Pages\TimeSheetPage.xaml;Pages\UsersPage.xaml;Windows\AddBookingWindow.xaml;Windows\BookingWindow.xaml;Windows\CategoryWindow.xaml;Windows\LoginWindow.xaml;Windows\MainWindow.xaml;Windows\MyAccountWindow.xaml;Windows\NewOrderWindow.xaml;Windows\OrderTicketWindow.xaml;Windows\TimeSheetWindow.xaml;
 
 True
 

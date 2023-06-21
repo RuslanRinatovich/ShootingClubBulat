@@ -39,7 +39,7 @@ namespace QuestWorldApp.Models
             {
                 if (Manager.CurrentUser == null )
                    return Visibility.Collapsed;
-                if (Manager.CurrentUser.RoleId < 3)
+                if (Manager.CurrentUser.RoleId < 2)
                     return Visibility.Collapsed;
                 return Visibility.Visible;
             }

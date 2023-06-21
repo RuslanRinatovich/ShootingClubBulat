@@ -6,13 +6,14 @@
       xmlns:local="clr-namespace:QuestWorldApp.Pages"
       mc:Ignorable="d" 
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="800" d:DesignWidth="800"
       Title="Каталог квестов" IsVisibleChanged="Page_IsVisibleChanged"
  
       >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
             
@@ -57,7 +58,13 @@
                 </ComboBox>
            
         </WrapPanel>
-        <ListView x:Name="LViewGoods" Grid.Row="1"
+     
+        <TextBlock Grid.Row="1" x:Name="TextBlockBasketInfo" Width="200" HorizontalAlignment="Right" Margin="0 0 140 0" />
+        <materialDesign:Badged Grid.Row="1" HorizontalAlignment="Right" x:Name="BadgeBasketCount" VerticalAlignment="Center" Margin="2 0 10 0">
+            <Button  Width="auto"  Content="{materialDesign:PackIcon Kind=BasketUnfill}"  Visibility="Collapsed"
+                     x:Name="BtnBasket" Click="BtnBasket_Click"/>
+        </materialDesign:Badged>
+        <ListView x:Name="LViewGoods" Grid.Row="2"
                   ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
                   >
             <ListView.ItemsPanel >
@@ -136,8 +143,14 @@
                                         <DataGrid.Columns>
                                             
                                             <DataGridTextColumn Binding="{Binding Service.Title}" Header="Услуга" Width="*"/>
-                                            <DataGridTextColumn Binding="{Binding Price, StringFormat='c', ConverterCulture='ru-RU'}" Header="Стоимость" Width="*"/>
-
+                                            <DataGridTextColumn Binding="{Binding Price, StringFormat='c', ConverterCulture='ru-RU'}"  Header="Стоимость" Width="*"/>
+                                            <DataGridTemplateColumn Width="auto" Header="{materialDesign:PackIcon Kind=Basket}"  >
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Button x:Name="BtnAdd"  Content="{materialDesign:PackIcon Kind=Add}" Visibility="{Binding GetVisibility}"  Click="BtnAdd_Click"  Margin="0"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
 
 
 
@@ -204,100 +217,9 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <TextBlock Grid.Row="2" x:Name="TextBlockCount" />
+        <TextBlock Grid.Row="3" x:Name="TextBlockCount" />
 
-        <materialDesign:DialogHost x:Name="DialogHostMoreInformation"
-                                   Background="{StaticResource MaterialDesignDarkBackground}" 
-                                   
-                                   Width="600" MaxWidth="600"
-                                   Height="400" MaxHeight="400"
-                                   BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Grid.ColumnSpan="2"
-                                  >
-            <materialDesign:DialogHost.DialogContent >
-                <StackPanel Margin="20" >
-                    <Grid materialDesign:ColorZoneAssist.Mode="Dark">
-                        <Grid.RowDefinitions>
-                            <RowDefinition        Height="60" />
-                            <RowDefinition        Height="340" />
-                          
-                        </Grid.RowDefinitions>
-                                
-
-                     
-                        <TextBlock Grid.Row="0"      Margin="5" TextAlignment="Center"  VerticalAlignment="Stretch"
-                                       Text="Отзывы" TextWrapping="Wrap" HorizontalAlignment="Center"
-                                       FontWeight="Bold" FontSize="14"  />
-                           
-                            <ScrollViewer HorizontalScrollBarVisibility="Disabled"  VerticalScrollBarVisibility="Auto"  Grid.Row="1">
-                                <ListBox  x:Name="ListBoxRewiews" VerticalAlignment="Stretch" >
-                                    <ListBox.ItemTemplate>
-                                        <DataTemplate>
-                                        <materialDesign:Card Width="600">
-                                            <Grid>
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="30"/>
-                                                    <RowDefinition Height="30"/>
-                                                    <RowDefinition Height="30"/>
-                                                    <RowDefinition Height="30"/>
-                                                    <RowDefinition Height="30"/>
-                                                    <RowDefinition Height="30"/>
-                                                    <RowDefinition/>
-                                                </Grid.RowDefinitions>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="180"/>
-                                                    <ColumnDefinition/>
-                                                </Grid.ColumnDefinitions>
-
-
-
-                                                <materialDesign:RatingBar Margin="10 0 0 0" IsPreviewValueEnabled="True" Grid.Row="0" Grid.Column="0" IsReadOnly="True"    Value="{Binding Rate}" Max="5"  />
-                                                <TextBlock FontSize="16" Margin="20 0 0 0" 
-                                                           Grid.Row="0" Grid.Column="1"
-                                                       Style="{StaticResource MaterialDesignSubtitle2TextBlock  }" 
-                                                       Text="{Binding Path=User.GetFIO}" TextWrapping="Wrap" Width="600"
-                                                       HorizontalAlignment="Stretch" />
-
-
-
-                                                <TextBlock  Margin="10 0 0 0" Grid.Row="1" Grid.Column="0"  Text="Качество загадок" Style="{StaticResource MaterialDesignSubtitle2TextBlock  }"/>
-                                                <materialDesign:RatingBar Margin="10 0 0 0" IsReadOnly="True"  Grid.Row="1" Grid.Column="1" x:Name="RatingBarQualityOfPuzzles" Value="{Binding QualityOfPuzzles}" Max="10" />
-                                                <TextBlock Grid.Row="1" Grid.Column="1" Margin="300 0 0 0" Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="{Binding GetQualityOfPuzzles}"/>
-                                                <TextBlock Margin="10 0 0 0"  Text="Антураж и декорации" Grid.Row="2" Grid.Column="0" Style="{StaticResource MaterialDesignSubtitle2TextBlock  }"/>
-                                                <materialDesign:RatingBar  Margin="10 0 0 0" Grid.Row="2" Grid.Column="1"  x:Name="RatingBarEntourage" Max="10" Value="{Binding Entourage}" IsReadOnly="True" />
-                                                <TextBlock Grid.Row="2" Grid.Column="1" Margin="300 0 0 0" Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="{Binding GetEntourage}"/>
-                                                
-                                                <TextBlock  Margin="10 0 0 0"  Text="Сервис" Grid.Row="3" Grid.Column="0" Style="{StaticResource MaterialDesignSubtitle2TextBlock  }"/>
-                                                <materialDesign:RatingBar  Margin="10 0 0 0"  Grid.Row="3" Grid.Column="1" x:Name="RatingBarService"  IsReadOnly="True" Max="10"  Value="{Binding Sevice}"   />
-                                                <TextBlock Grid.Row="3" Grid.Column="1" Margin="300 0 0 0" Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="{Binding GetService}"/>
-
-                                                <TextBlock  Margin="10 0 0 0" Text="Безопасность" Grid.Row="4" Grid.Column="0" Style="{StaticResource MaterialDesignSubtitle2TextBlock  }"/>
-                                                <materialDesign:RatingBar  Margin="10 0 0 0" Grid.Row="4" Grid.Column="1"  x:Name="RatingBarSafety"   IsReadOnly="True"  Max="10" Value="{Binding Safety}"  />
-                                                <TextBlock Grid.Row="4" Grid.Column="1" Margin="300 0 0 0" Style="{StaticResource MaterialDesignCaptionTextBlock}" Text="{Binding GetSafety}"/>
-                                                <TextBlock FontSize="14" Margin="10 0 0 0"  Text="Отзыв" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
-                                                       Style="{StaticResource MaterialDesignSubtitle2TextBlock  }"
-                    
-                                                       HorizontalAlignment="Stretch"/>
-                                                <TextBlock FontSize="14" Margin="10 0 0 0" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Title}" TextWrapping="Wrap"
-                                                       HorizontalAlignment="Stretch"/>
-
-                                                    </Grid>
-                                        </materialDesign:Card>
-                                    </DataTemplate>
-                                    </ListBox.ItemTemplate>
-                                </ListBox>
-                            </ScrollViewer>
-
-                    </Grid>
-
-                    <Button x:Name="btnOk" Click="BtnOk_Click" Width="100" HorizontalAlignment="Center">
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <materialDesign:PackIcon Kind="Check" Foreground="#FFF" Margin="5" VerticalAlignment="Center"/>
-                            <TextBlock Text="OK" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Button>
-                </StackPanel>
-            </materialDesign:DialogHost.DialogContent>
-        </materialDesign:DialogHost>
+        
 
     </Grid>
 </Page>

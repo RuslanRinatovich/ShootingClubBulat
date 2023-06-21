@@ -1,0 +1,102 @@
+﻿<Page x:Class="QuestWorldApp.Pages.ShowOrderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:QuestWorldApp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ShowOrderPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="34"/>
+            <RowDefinition Height="34"/>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid Background="White" Grid.ColumnSpan="2" />
+        <Image Source="/QuestWorldApp;component/Resources/logo.png" 
+               Margin="10" 
+               HorizontalAlignment="Left" />
+        <TextBlock Grid.Row="0" Text="Стрелковый клуб Булат"  Grid.ColumnSpan="2"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                  
+                   FontSize="20"
+                   FontWeight="Bold" />
+        <TextBlock  Text="Бронь №"  Grid.Row="1" Grid.Column="0"
+                    Grid.ColumnSpan="2"  x:Name="TextBlockOrderNumber"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="20"
+                   FontWeight="Bold" />
+
+        <TextBlock Text="Дата брони"  Grid.Row="2" Grid.Column="0" 
+                   HorizontalAlignment="Left" Margin="60 0 0 0" 
+                   VerticalAlignment="Center"
+                  Style="{StaticResource MaterialDesignSubtitle2TextBlock}"
+                   FontWeight="Bold" />
+        <TextBlock x:Name="TextBlockOrderCreateDate"
+                   Grid.Row="2" Grid.Column="1"  
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Left" 
+                   Style="{StaticResource MaterialDesignSubtitle2TextBlock}"
+                   FontWeight="Bold"  />
+
+
+        <DataGrid x:Name="DataGridOrderItems" Grid.Row="3"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  Grid.ColumnSpan="2"
+                  SelectionMode="Single"
+                  LoadingRow="DataGridGoodLoadingRow">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="100" 
+                                      
+                                        Header="Изображение">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Path=Pricelist.Weapon.GetPhoto}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Binding="{Binding Pricelist.Weapon.Title}"
+                                    
+                                    Header="Оружие" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Pricelist.Service.Title}"
+                                    
+                                    Header="Наименование услуги" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Count}"
+                                    
+                                    Header="Количество" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Pricelist.Price, StringFormat='c', ConverterCulture='ru-RU'}"
+                                    
+                                    Header="Стоимость" Width="*"/>
+
+                <DataGridTextColumn Binding="{Binding Total, StringFormat='c', ConverterCulture='ru-RU'}"
+                                   
+                                    Header="ИТОГО" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBlock x:Name="TextBlockTotalCost" Grid.Row="4" Style="{StaticResource MaterialDesignHeadline6TextBlock}" Margin="20 0 0 0"
+                   Grid.ColumnSpan="2"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="5"
+                    Grid.ColumnSpan="2"
+                    HorizontalAlignment="Center">
+           
+            <Button x:Name="BtnSavePDF"  
+                    ToolTip="Сохранить в PDF"
+                    Content="{materialDesign:PackIcon FilePdfBox}" Width="160"
+                    Click="BtnSavePDF_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
