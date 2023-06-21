@@ -120,7 +120,6 @@
     </Compile>
     <Compile Include="Models\Partials\Booking.cs" />
     <Compile Include="Models\Partials\Quest.cs" />
-    <Compile Include="Models\Partials\Rewiew.cs" />
     <Compile Include="Models\Partials\TimeSheet.cs" />
     <Compile Include="Models\Partials\User.cs" />
     <Compile Include="Models\Pricelist.cs">

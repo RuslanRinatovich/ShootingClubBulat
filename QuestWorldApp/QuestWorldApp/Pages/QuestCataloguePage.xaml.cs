@@ -33,7 +33,7 @@ namespace QuestWorldApp.Pages
         void LoadDataGrid()
         {
             
-            List<Weapon> goods = ShootingClubBDEntities.GetContext().Quests.OrderBy(p => p.Title).ToList();
+            List<Weapon> goods = ShootingClubBDEntities.GetContext().Weapons.OrderBy(p => p.Title).ToList();
             LViewGoods.ItemsSource = goods;
             _itemcount = goods.Count;
             TextBlockCount.Text = $" Результат запроса: {goods.Count} записей из {goods.Count}";
@@ -44,29 +44,13 @@ namespace QuestWorldApp.Pages
             var categories = ShootingClubBDEntities.GetContext().Categories.OrderBy(p => p.Title).ToList();
             categories.Insert(0, new Category
             {
-                Title = "Все виды"
+                Title = "Все категории"
             }
             );
             ComboCategory.ItemsSource = categories;
             ComboCategory.SelectedIndex = 0;
 
-            var ages = ShootingClubBDEntities.GetContext().Ages.OrderBy(p => p.Title).ToList();
-            ages.Insert(0, new Age
-            {
-                Title = "Все возрастные категории"
-            }
-            );
-            ComboAge.ItemsSource = ages;
-            ComboAge.SelectedIndex = 0;
-
-            var organizers = ShootingClubBDEntities.GetContext().Organizers.OrderBy(p => p.Title).ToList();
-            organizers.Insert(0, new Organizer
-            {
-                Title = "Все организаторы"
-            }
-            );
-            ComboOrganizer.ItemsSource = organizers;
-            ComboOrganizer.SelectedIndex = 0;
+           
         }
 
 
@@ -77,33 +61,14 @@ namespace QuestWorldApp.Pages
             // получаем текущие данные из бд
             //var currentGoods = DataBDEntities.GetContext().Abonements.OrderBy(p => p.CategoryTrainer.Trainer.LastName).ToList();
 
-            var currentData = ShootingClubBDEntities.GetContext().Quests.OrderBy(p => p.Title).ToList();
+            var currentData = ShootingClubBDEntities.GetContext().Weapons.OrderBy(p => p.Title).ToList();
             // выбор только тех товаров, которые принадлежат данному производителю
 
-
             if (ComboCategory.SelectedIndex > 0)
-            {
-                int catId = Convert.ToInt32((ComboCategory.SelectedItem as Category).Id);
-                List<Weapon> quests = new List<Weapon>();
-                foreach (Weapon quest in currentData)
-                {
-                    List<QuestCategory> questCategories = quest.QuestCategories.ToList();
-
-                    if (questCategories.Any(elem => elem.CategoryId == catId))
-                        quests.Add(quest);
-                }
-
-                currentData = quests;
-            }
-
-            if (ComboAge.SelectedIndex > 0)
-                currentData = currentData.Where(p => p.AgeId == (ComboAge.SelectedItem as Age).Id).ToList();
-            if (ComboOrganizer.SelectedIndex > 0)
-                currentData = currentData.Where(p => p.OrganizerId == (ComboOrganizer.SelectedItem as Organizer).Id).ToList();
+                currentData = currentData.Where(p => p.CategoryId == (ComboCategory.SelectedItem as Category).Id).ToList();
 
             // выбор тех товаров, в названии которых есть поисковая строка
             currentData = currentData.Where(p => p.Title.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
-
 
             if (ComboSort.SelectedIndex >= 0)
             {
@@ -113,9 +78,9 @@ namespace QuestWorldApp.Pages
                 if (ComboSort.SelectedIndex == 1)
                     currentData = currentData.OrderByDescending(p => p.Title).ToList();
                 if (ComboSort.SelectedIndex == 2)
-                    currentData = currentData.OrderBy(p => p.GetRate).ToList();
+                    currentData = currentData.OrderBy(p => p.Weight).ToList();
                 if (ComboSort.SelectedIndex == 3)
-                    currentData = currentData.OrderByDescending(p => p.GetRate).ToList();
+                    currentData = currentData.OrderByDescending(p => p.Weight).ToList();
                 // сортировка по убыванию цены
             }
             // В качестве источника данных присваиваем список данных
@@ -152,13 +117,6 @@ namespace QuestWorldApp.Pages
         private void BtnMoreInfo_Click(object sender, RoutedEventArgs e)
         {
             Weapon quest = (sender as Button).DataContext as Weapon;
-            if (quest.Rewiews.Count == 0)
-                return;
-            //Trainer trainer = YogaFeatPilatesBDEntities.GetContext().Trainers.FirstOrDefault(p => p.Id == edu.TrainerId);
-            //List<TimeTable> timeTables = YogaFeatPilatesBDEntities.GetContext().TimeTables.Where(p => p.CategoryTrainerId == edu.Id).ToList();
-            //ListBoxTimeTable.ItemsSource = timeTables;
-            //TbCategoryName.Text = edu.Category.Name;
-            ListBoxRewiews.ItemsSource = quest.Rewiews;
             DialogHostMoreInformation.DataContext = quest;
             DialogHostMoreInformation.IsOpen = true;
         }
@@ -176,16 +134,7 @@ namespace QuestWorldApp.Pages
             bookingWindow.ShowDialog();
         }
 
-        private void BtnMakeRewiew_Click(object sender, RoutedEventArgs e)
-        {
-            Weapon quest = (sender as Button).DataContext as Weapon;
-            MakeRewiewWindow makeRewiew = new MakeRewiewWindow(new Rewiew(), quest);
-
-            if (makeRewiew.ShowDialog() == true)
-            {
-                Manager.MainFrame.NavigationService.Refresh();
-            }
-        }
+   
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
@@ -195,16 +144,5 @@ namespace QuestWorldApp.Pages
             }
         }
 
-        private void RatingBarRate_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            //Weapon quest = (sender as Button).DataContext as Weapon;
-            ////Trainer trainer = YogaFeatPilatesBDEntities.GetContext().Trainers.FirstOrDefault(p => p.Id == edu.TrainerId);
-            ////List<TimeTable> timeTables = YogaFeatPilatesBDEntities.GetContext().TimeTables.Where(p => p.CategoryTrainerId == edu.Id).ToList();
-            ////ListBoxTimeTable.ItemsSource = timeTables;
-            ////TbCategoryName.Text = edu.Category.Name;
-            //ListBoxRewiews.ItemsSource = quest.Rewiews;
-            //DialogHostMoreInformation.DataContext = quest;
-            //DialogHostMoreInformation.IsOpen = true;
-        }
     }
 }

@@ -41,17 +41,8 @@
                              Style="{StaticResource MaterialDesignFlatButton}" Visibility="Collapsed"
                             Content="{materialDesign:PackIcon Kind=People, Size=24}"
                            />
-                    <Button x:Name="BtnMyrewiew"  Click="BtnMyrewiew_Click" Visibility="Collapsed"
-                            ToolTip="Мои отзывы"
-                            Style="{StaticResource MaterialDesignFlatButton}"
-                            Content="{materialDesign:PackIcon Kind=MessageDraw, Size=24}"
-                            />
-
-                    <Button x:Name="BtnAllRewiew"  Click="BtnAllRewiew_Click" Visibility="Collapsed"
-                            ToolTip="Отзывы"
-                            Style="{StaticResource MaterialDesignFlatButton}"
-                            Content="{materialDesign:PackIcon Kind=MessageDraw, Size=24}"
-                            />
+                    
+                  
                     <Button x:Name="BtnMyBooking"  Click="BtnMyOrders_Click" Visibility="Collapsed"
                             ToolTip="Мои квесты"
                             Style="{StaticResource MaterialDesignFlatButton}"
@@ -82,27 +73,7 @@
         <Frame x:Name="MainFrame" Grid.Row="1" 
                NavigationUIVisibility="Hidden"
                BorderThickness="1" ContentRendered="MainFrameContentRendered"/>
-        <!--<StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 20 0">
-            <Button x:Name="BtnEditGoods"  Click="BtnEditGoodsClick" ToolTip="Тренеры" Visibility="Collapsed">
-                <materialDesign:PackIcon  Kind="AccountMultiplePlus" Padding="0"/>
-            </Button>
-            <Button x:Name="BtnOrder"  Click="BtnOrder_Click" ToolTip="Заявки" Visibility="Collapsed">
-                <materialDesign:PackIcon  Kind="OrderBoolAscending" Padding="0"/>
-            </Button>
-            <Button x:Name="BtnBuyes"  Click="BtnBuyes_Click" ToolTip="Абонементы" Visibility="Collapsed">
-                <materialDesign:PackIcon  Kind="Cash" Padding="0"/>
-            </Button>
-            <Button x:Name="BtnMyAccount"  Click="BtnMyAccount_Click" ToolTip="Мой профиль" Visibility="Collapsed">
-                <materialDesign:PackIcon  Kind="Account" Padding="0"/>
-            </Button>
-            <Button x:Name="BtnMyOrders"  Click="BtnMyOrders_Click" ToolTip="Оставить заявку" Visibility="Collapsed">
-                <materialDesign:PackIcon  Kind="StarBorder" Padding="0"/>
-            </Button>
-            <Button x:Name="BtnEnter"  Click="BtnEnter_Click" ToolTip="Войти">
-                <materialDesign:PackIcon x:Name="IconBtnKey"  Kind="Login" Padding="0"/>
-            </Button>
-            
-        </StackPanel>-->
+     
         <Rectangle Grid.Row="2" Fill="{StaticResource MaterialDesignDarkBackground}"/>
 
     </Grid>

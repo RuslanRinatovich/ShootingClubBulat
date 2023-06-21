@@ -37,7 +37,7 @@ namespace QuestWorldApp.Pages
                 DataGridGood.ItemsSource = null;
                 //загрузка обновленных данных
                 ShootingClubBDEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-                List<Order> goods = ShootingClubBDEntities.GetContext().Orders.OrderBy(p => p.TimeSheet.Date).ThenBy(p => p.TimeSheet.Time).ToList();
+                List<Order> goods = ShootingClubBDEntities.GetContext().Orders.OrderBy(p => p.DateOrder).ToList();
                 DataGridGood.ItemsSource = goods;
                 _itemcount = goods.Count;
                 TextBlockCount.Text = $" Результат запроса: {goods.Count} записей из {goods.Count}";
@@ -59,26 +59,7 @@ namespace QuestWorldApp.Pages
             }
         }
 
-        private void BtnAddClick(object sender, RoutedEventArgs e)
-        {
-            //try
-            //{
-
-
-            //    OrganizerWindow window = new OrganizerWindow(new Organizer());
-            //    if (window.ShowDialog() == true)
-            //    {
-            //        ShootingClubBDEntities.GetContext().Organizers.Add(window.currentItem);
-            //        ShootingClubBDEntities.GetContext().SaveChanges();
-            //        LoadData();
-            //        MessageBox.Show("Запись добавлена", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
-            //    }
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Ошибка");
-            //}
-        }
+     
 
         private void BtnDeleteClick(object sender, RoutedEventArgs e)
         {
@@ -133,21 +114,22 @@ namespace QuestWorldApp.Pages
         private void UpdateData()
         {
             // получаем текущие данные из бд
-            var currentGoods = ShootingClubBDEntities.GetContext().Orders.OrderBy(p => p.TimeSheet.Date).ThenBy(p => p.TimeSheet.Time).ToList();
+            string username = Manager.CurrentUser.Username;
+            var currentGoods = ShootingClubBDEntities.GetContext().Orders.Where(p => p.Username == username).OrderBy(p => p.DateOrder).ToList();
             // выбор только тех товаров, по определенному диапазону скидки
 
-            currentGoods = currentGoods.Where(p => p.UserInfo.ToLower().Contains(TBoxSearch.Text.ToLower()) ||
-            p.TimeSheet.Weapon.Title.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
+            currentGoods = currentGoods.Where(p => p.User.GetFIO.ToLower().Contains(TBoxSearch.Text.ToLower()) ||
+            p.Id.ToString().ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
 
             // сортировка
             if (ComboSort.SelectedIndex >= 0)
             {
                 // сортировка по возрастанию цены
                 if (ComboSort.SelectedIndex == 0)
-                    currentGoods = currentGoods.OrderBy(p => p.TimeSheet.Date).ThenBy(p => p.TimeSheet.Time).ToList();
+                    currentGoods = currentGoods.OrderBy(p => p.DateOrder).ToList();
                 // сортировка по убыванию цены
                 if (ComboSort.SelectedIndex == 1)
-                    currentGoods = currentGoods.OrderByDescending(p => p.TimeSheet.Date).ThenByDescending(p => p.TimeSheet.Time).ToList();
+                    currentGoods = currentGoods.OrderByDescending(p => p.DateOrder).ToList();
             }
             // В качестве источника данных присваиваем список данных
             DataGridGood.ItemsSource = currentGoods;
@@ -200,13 +182,13 @@ namespace QuestWorldApp.Pages
 
             if ((sender as ToggleButton).IsChecked == true)
             {
-                selected.Payed = true;
+                selected.Paid = true;
                 ShootingClubBDEntities.GetContext().SaveChanges();
 
             }
             else
             {
-                selected.Payed = false;
+                selected.Paid = false;
                 ShootingClubBDEntities.GetContext().SaveChanges();
             }
 

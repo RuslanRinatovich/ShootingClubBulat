@@ -66,9 +66,7 @@ namespace QuestWorldApp
                 BtnQuests.Visibility = Visibility.Collapsed;
                 BtnMyAccount.Visibility = Visibility.Collapsed;
                 BtnUsers.Visibility = Visibility.Collapsed;
-                BtnAllRewiew.Visibility = Visibility.Collapsed;
                 BtnMyBooking.Visibility = Visibility.Collapsed;
-                BtnMyrewiew.Visibility = Visibility.Collapsed;
                 TextBlockUser.Text = "";
                 //if (Manager.CurrentUser is null)
                 //    return;
@@ -97,8 +95,6 @@ namespace QuestWorldApp
                     BtnBooking.Visibility = Visibility.Visible;
                     BtnQuests.Visibility = Visibility.Visible;
                     BtnMyAccount.Visibility = Visibility.Visible;
-                    BtnAllRewiew.Visibility = Visibility.Visible;
-                    BtnMyrewiew.Visibility = Visibility.Collapsed;
                     BtnMyBooking.Visibility = Visibility.Collapsed;
                     BtnUsers.Visibility = Visibility.Visible;
                 }                    
@@ -107,9 +103,7 @@ namespace QuestWorldApp
                     BtnBooking.Visibility = Visibility.Collapsed;
                     BtnQuests.Visibility = Visibility.Collapsed;
                     BtnUsers.Visibility = Visibility.Collapsed;
-                    BtnAllRewiew.Visibility = Visibility.Collapsed;
                     BtnMyAccount.Visibility = Visibility.Visible;
-                    BtnMyrewiew.Visibility = Visibility.Visible;
                     BtnMyBooking.Visibility = Visibility.Visible;
                 }
                 IconBtnKey.Kind = MaterialDesignThemes.Wpf.PackIconKind.Logout;
@@ -139,9 +133,7 @@ MessageBoxImage.Question);
                     BtnBooking.Visibility = Visibility.Collapsed;
                     BtnQuests.Visibility = Visibility.Collapsed;
                     BtnMyAccount.Visibility = Visibility.Collapsed;
-                    BtnAllRewiew.Visibility = Visibility.Collapsed;
                     BtnMyBooking.Visibility = Visibility.Collapsed;
-                    BtnMyrewiew.Visibility = Visibility.Collapsed;
                     BtnUsers.Visibility = Visibility.Collapsed;
                     TextBlockUser.Text = "";
                     MainFrame.NavigationService.Refresh();
@@ -159,8 +151,6 @@ MessageBoxImage.Question);
                     BtnBooking.Visibility = Visibility.Visible;
                     BtnQuests.Visibility = Visibility.Visible;
                     BtnMyAccount.Visibility = Visibility.Visible;
-                    BtnAllRewiew.Visibility = Visibility.Visible;
-                    BtnMyrewiew.Visibility = Visibility.Collapsed;
                     BtnUsers.Visibility = Visibility.Visible;
                     BtnMyBooking.Visibility = Visibility.Collapsed;
                 }
@@ -169,10 +159,7 @@ MessageBoxImage.Question);
                     BtnBooking.Visibility = Visibility.Collapsed;
                     BtnQuests.Visibility = Visibility.Collapsed;
                     BtnUsers.Visibility = Visibility.Collapsed;
-                    BtnAllRewiew.Visibility = Visibility.Collapsed;
                     BtnMyAccount.Visibility = Visibility.Visible;
-                   
-                    BtnMyrewiew.Visibility = Visibility.Visible;
                     BtnMyBooking.Visibility = Visibility.Visible;
                 }
                 IconBtnKey.Kind = MaterialDesignThemes.Wpf.PackIconKind.Logout;
@@ -241,19 +228,13 @@ MessageBoxImage.Question);
             MainFrame.Navigate(new BookingPage());
         }
 
-        private void BtnMyrewiew_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Navigate(new MyRewiewPage());
-        }
+      
 
         private void BtnUsers_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new UsersPage());
         }
 
-        private void BtnAllRewiew_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Navigate(new RewiewsPage());
-        }
+      
     }
 }

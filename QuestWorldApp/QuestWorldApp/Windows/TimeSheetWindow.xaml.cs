@@ -52,20 +52,20 @@ namespace QuestWorldApp.Windows
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            StringBuilder _error = CheckFields();
-            // если ошибки есть, то выводим ошибки в MessageBox
-            // и прерываем выполнение 
-            if (_error.Length > 0)
-            {
-                MessageBox.Show(_error.ToString());
-                return;
-            }
-            //currentItem.CategoryId = Convert.ToInt32(ComboCategory.SelectedValue);
-            currentItem.Date = Convert.ToDateTime(DatePickerDate.SelectedDate).Date;
-            currentItem.Time = Convert.ToDateTime(TimePickerTime.SelectedTime).TimeOfDay;
-            currentItem.Price = Convert.ToDouble(DoubleUpDownPrice.Value);
-            currentItem.QuestId = quest.Id;
-            this.DialogResult = true;
+            //StringBuilder _error = CheckFields();
+            //// если ошибки есть, то выводим ошибки в MessageBox
+            //// и прерываем выполнение 
+            //if (_error.Length > 0)
+            //{
+            //    MessageBox.Show(_error.ToString());
+            //    return;
+            //}
+            ////currentItem.CategoryId = Convert.ToInt32(ComboCategory.SelectedValue);
+            //currentItem.Date = Convert.ToDateTime(DatePickerDate.SelectedDate).Date;
+            //currentItem.Time = Convert.ToDateTime(TimePickerTime.SelectedTime).TimeOfDay;
+            //currentItem.Price = Convert.ToDouble(DoubleUpDownPrice.Value);
+            //currentItem.QuestId = quest.Id;
+            //this.DialogResult = true;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -75,17 +75,17 @@ namespace QuestWorldApp.Windows
 
         private void Window_Loaded_1(object sender, RoutedEventArgs e)
         {
-            DoubleUpDownPrice.Value = currentItem.Price;
-            if (currentItem.Id == 0)
-            {
-                DatePickerDate.SelectedDate = DateTime.Today;
-                TimePickerTime.SelectedTime = DateTime.Today;
-            }
-            else
-            {
-                DatePickerDate.SelectedDate = Convert.ToDateTime(currentItem.Date);
-                TimePickerTime.SelectedTime = Convert.ToDateTime(currentItem.Time.ToString());
-            }
+            //DoubleUpDownPrice.Value = currentItem.Price;
+            //if (currentItem.Id == 0)
+            //{
+            //    DatePickerDate.SelectedDate = DateTime.Today;
+            //    TimePickerTime.SelectedTime = DateTime.Today;
+            //}
+            //else
+            //{
+            //    DatePickerDate.SelectedDate = Convert.ToDateTime(currentItem.Date);
+            //    TimePickerTime.SelectedTime = Convert.ToDateTime(currentItem.Time.ToString());
+            //}
             
         }
     }

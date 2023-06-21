@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\obj\Debug\
+c:\Users\Main\Documents\ЗМК\ДИПЛОМ2023\Хабибуллин Б\QuestWorldApp\QuestWorldApp\obj\Debug\
 QuestWorldApp
 none
 false
 DEBUG;TRACE
-C:\DIPLOMS\Хабибуллин\QuestWorldApp\QuestWorldApp\App.xaml
+c:\Users\Main\Documents\ЗМК\ДИПЛОМ2023\Хабибуллин Б\QuestWorldApp\QuestWorldApp\App.xaml
 16679702179
 2-1890902742
-392134978443
-27-1153596279
+38-868796954
+27657774138
 Pages\AddQuestPage.xaml;Pages\AddUserPage.xaml;Pages\BookingPage.xaml;Pages\CategoryPage.xaml;Pages\MyBookingPage.xaml;Pages\QuestCataloguePage.xaml;Pages\QuestsPage.xaml;Pages\TimeSheetPage.xaml;Pages\UsersPage.xaml;Windows\AddBookingWindow.xaml;Windows\BookingWindow.xaml;Windows\CategoryWindow.xaml;Windows\LoginWindow.xaml;Windows\MainWindow.xaml;Windows\MyAccountWindow.xaml;Windows\TimeSheetWindow.xaml;
 
-True
+False
 

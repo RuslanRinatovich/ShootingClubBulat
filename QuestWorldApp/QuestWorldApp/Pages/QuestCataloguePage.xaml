@@ -20,18 +20,11 @@
 
         <WrapPanel Grid.Row="0" HorizontalAlignment="Stretch"  >
 
-            <TextBox Width="275" x:Name="TBoxSearch"  materialDesign:HintAssist.Hint="Введите название квеста" TextChanged="TBoxSearch_TextChanged"
+            <TextBox Width="275" x:Name="TBoxSearch"  materialDesign:HintAssist.Hint="Введите название оружия" TextChanged="TBoxSearch_TextChanged"
                          />
-
-            <ComboBox Width="275" x:Name="ComboOrganizer" FontSize="14" Padding="3" materialDesign:HintAssist.Hint="Организатор" 
-                           DisplayMemberPath="Title" SelectionChanged="ComboOrganizer_SelectionChanged"/>
             
             <ComboBox Width="275" x:Name="ComboCategory" FontSize="14" Padding="3" materialDesign:HintAssist.Hint="Категория" 
                          DisplayMemberPath="Title" SelectionChanged="ComboCategory_SelectionChanged"/>
-            
-            <ComboBox Width="275" x:Name="ComboAge" FontSize="14" Padding="3" materialDesign:HintAssist.Hint="Возрастная категория" 
-                           DisplayMemberPath="Title" SelectionChanged="ComboAge_SelectionChanged"/>
-
               
 
                 <ComboBox Width="275" materialDesign:HintAssist.Hint="Сортировать по"
@@ -51,13 +44,13 @@
                     </ComboBoxItem>
                     <ComboBoxItem >
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Рейтинг"/>
+                            <TextBlock Text="Вес"/>
                             <materialDesign:PackIcon Kind="SortNumericAscendingVariant" Margin="5 0 0 0"/>
                         </StackPanel>
                     </ComboBoxItem>
                     <ComboBoxItem >
                         <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Рейтинг"/>
+                        <TextBlock Text="Вес"/>
                         <materialDesign:PackIcon Kind="SortNumericDescendingVariant" Margin="5 0 0 0"/>
                         </StackPanel>
                     </ComboBoxItem>
@@ -74,25 +67,114 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <materialDesign:Card Width="400" Height="600" Background="{StaticResource MaterialDesignDarkBackground}" >
+                    
+                    <materialDesign:Card Width="400" Height="500" Background="White" >
+                        <materialDesign:Flipper  materialDesign:FlipperAssist.UniformCornerRadius="8" Width="400" Height="500"
+                       >
+                        <materialDesign:Flipper.FrontContent>
+                            <Grid materialDesign:ColorZoneAssist.Mode="SecondaryMid">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition        Height="*" />
+                                    <RowDefinition        Height="340" />
+
+                                        <RowDefinition        Height="60" />
+
+                                    </Grid.RowDefinitions>
+
+                                <Image  Source="{Binding Path=GetPhoto}"  Grid.Row="1"  Height="300"  
+                                    Stretch="Uniform" />
+                                <TextBox  Grid.Row="0"       Text="{Binding Title}" HorizontalAlignment="Center" TextWrapping="Wrap"
+                                                 FontWeight="Bold" Margin="10" IsReadOnly="True" HorizontalContentAlignment="Center"
+                                      
+                                                FontSize="18"/>
+                                <StackPanel  Grid.Row="1" Margin="20 0 0 0"     HorizontalAlignment="Left" VerticalAlignment="Bottom" >
+                                    <Grid Width="auto">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <materialDesign:PackIcon Kind="DiameterVariant" Height="24"  Grid.Row="0" Margin="3"/>
+                                        <TextBlock  Grid.Row="0" Grid.Column="1" Text="{Binding Сaliber}" Margin="3" FontSize="16" FontWeight="Bold" />
+                                        <materialDesign:PackIcon Kind="Ammunition" Height="24" Grid.Row="1" Margin="3"/>
+                                        <TextBlock  Grid.Row="1" Grid.Column="1" Text="{Binding MagazineSize}" Margin="3" FontSize="16" FontWeight="Bold" />
+                                        <materialDesign:PackIcon Kind="Weight"  Height="24" Grid.Row="2" Margin="3"/>
+                                        <TextBlock  Grid.Row="2" Grid.Column="1" Text="{Binding Weight}"  Margin="3" FontSize="16" FontWeight="Bold" />
+                                    </Grid>
+                                </StackPanel>
+
+
+
+                                    <Button Width="184"  Margin="8" Grid.Row="2"
+                                Command="{x:Static materialDesign:Flipper.FlipCommand}" 
+                                    Content="ПРАЙС-ЛИСТ"
+                                    Style="{StaticResource MaterialDesignFlatButton}" />
+
+                            </Grid>
+                                       
+                        </materialDesign:Flipper.FrontContent>
+                        <materialDesign:Flipper.BackContent>
+
+                                <Grid materialDesign:ColorZoneAssist.Mode="SecondaryMid">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition        Height="*" />
+                                        <RowDefinition        Height="60" />
+
+
+
+                                    </Grid.RowDefinitions>
+
+
+                                    <DataGrid Grid.Row="0"                   AutoGenerateColumns="False"
+                  IsReadOnly="True"                SelectionMode="Single" ItemsSource="{Binding Pricelists}"
+                  Style="{DynamicResource MaterialDesignDataGrid}" >
+                                        
+                                        <DataGrid.Columns>
+                                            
+                                            <DataGridTextColumn Binding="{Binding Service.Title}" Header="Услуга" Width="*"/>
+                                            <DataGridTextColumn Binding="{Binding Price, StringFormat='c', ConverterCulture='ru-RU'}" Header="Стоимость" Width="*"/>
+
+
+
+
+
+
+                                        </DataGrid.Columns>
+
+                                    </DataGrid>
+
+
+
+
+                                    <Button      Width="184"      Margin="8"      Command="{x:Static materialDesign:Flipper.FlipCommand}"
+                                         Content="GO BACK"      Style="{StaticResource MaterialDesignFlatButton}" />
+                                </Grid>
+                              
+                        </materialDesign:Flipper.BackContent>
+                    </materialDesign:Flipper>
+                        
+                        </materialDesign:Card  >
+                            <!--<materialDesign:Card Width="400" Height="440" Background="White" >
                         <Grid materialDesign:ColorZoneAssist.Mode="SecondaryMid">
                             <Grid.RowDefinitions>
+                                <RowDefinition        Height="*" />
+                                <RowDefinition        Height="340" />
+                              
                                
-                                <RowDefinition        Height="300" />
-                                <RowDefinition        Height="60" />
-                                <RowDefinition        Height="60" />
-                                <RowDefinition        Height="100" />
-                                <RowDefinition        Height="40" />
-                                <RowDefinition        Height="40" />
 
                             </Grid.RowDefinitions>
 
-                            <Image  Source="{Binding Path=GetPhoto}"  Grid.Row="0"  Height="300"  Width="400" 
-                                    Stretch="UniformToFill" />
-                            <TextBlock   Grid.Row="1"       Text="{Binding Title}" HorizontalAlignment="Left" Foreground="White"
-                                                 FontWeight="Bold" Margin="10"
-                                                FontSize="22"/>
-                            <StackPanel  Grid.Row="2"      HorizontalAlignment="Right" >
+                            <Image  Source="{Binding Path=GetPhoto}"  Grid.Row="1"  Height="300"  
+                                    Stretch="Uniform" />
+                            <TextBox  Grid.Row="0"       Text="{Binding Title}" HorizontalAlignment="Center" TextWrapping="Wrap"
+                                                 FontWeight="Bold" Margin="10" IsReadOnly="True" HorizontalContentAlignment="Center"
+                                      
+                                                FontSize="18"/>
+                            <StackPanel  Grid.Row="1" Margin="20 0 0 0"     HorizontalAlignment="Left" VerticalAlignment="Bottom" >
                                 <Grid Width="auto">
                                     <Grid.RowDefinitions>
                                         <RowDefinition/>
@@ -103,27 +185,21 @@
                                         <ColumnDefinition/>
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
-                                    <materialDesign:PackIcon Kind="DiameterVariant" Grid.Row="0"/>
-                                    <TextBlock  Grid.Row="0" Grid.Column="1" Text="{Binding Сaliber}" />
-                                    <materialDesign:PackIcon Kind="Ammunition"  Grid.Row="1"/>
-                                    <TextBlock  Grid.Row="1" Grid.Column="1" Text="{Binding MagazineSize}" />
-                                    <materialDesign:PackIcon Kind="Weight"  Grid.Row="2"/>
-                                    <TextBlock  Grid.Row="2" Grid.Column="1" Text="{Binding Weight}" />
+                                    <materialDesign:PackIcon Kind="DiameterVariant" Height="24"  Grid.Row="0" Margin="3"/>
+                                    <TextBlock  Grid.Row="0" Grid.Column="1" Text="{Binding Сaliber}" Margin="3" FontSize="16" FontWeight="Bold" />
+                                    <materialDesign:PackIcon Kind="Ammunition" Height="24" Grid.Row="1" Margin="3"/>
+                                    <TextBlock  Grid.Row="1" Grid.Column="1" Text="{Binding MagazineSize}" Margin="3" FontSize="16" FontWeight="Bold" />
+                                    <materialDesign:PackIcon Kind="Weight"  Height="24" Grid.Row="2" Margin="3"/>
+                                    <TextBlock  Grid.Row="2" Grid.Column="1" Text="{Binding Weight}"  Margin="3" FontSize="16" FontWeight="Bold" />
                                 </Grid>
                             </StackPanel>
                              
 
-                            <Button Grid.Row="2" HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignFlatButton}" Click="BtnMoreInfo_Click">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Рейтинг по отзывам: " Style="{StaticResource MaterialDesignSubtitle2TextBlock}"/>
-                                    <materialDesign:RatingBar    x:Name="RatingBarRate" Margin="10 0 0 0" IsReadOnly="True" 
-                                                      Value="{Binding GetRate}" MouseDown="RatingBarRate_MouseDown"  />
-                                </StackPanel>
-                            </Button>
+                           
                         
 
                         </Grid>
-                    </materialDesign:Card>
+                    </materialDesign:Card>-->
 
                 </DataTemplate>
             </ListView.ItemTemplate>

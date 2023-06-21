@@ -23,12 +23,6 @@
 
 
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <DatePicker Width="200" x:Name="DatePickerDate"
-                    materialDesign:HintAssist.Hint="Выберите дату"
-                    Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
-            <materialDesign:TimePicker x:Name="TimePickerTime" Width="200"
-                                   materialDesign:HintAssist.Hint="Выберите время" 
-                                   Style="{StaticResource MaterialDesignOutlinedTimePicker}" Is24Hours="True" />
             <TextBlock x:Name="TextBlockAnswer" VerticalAlignment="Center" Style="{DynamicResource  MaterialDesignCaptionTextBlock}"/>
         </StackPanel>
 

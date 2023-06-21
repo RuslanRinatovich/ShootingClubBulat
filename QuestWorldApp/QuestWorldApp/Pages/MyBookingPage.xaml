@@ -45,25 +45,34 @@
                   LoadingRow="DataGridGoodLoadingRow">
             <DataGrid.Columns>
 
-                <DataGridTextColumn Binding="{Binding Id}" Header="ID" />
-                <DataGridTextColumn Binding="{Binding TimeSheet.Weapon.Title}" Header="Квест" Width="*"/>
-                <DataGridTextColumn Binding="{Binding TimeSheet.Price, StringFormat='c', ConverterCulture='ru-RU'}" Header="Стоимость" Width="*"/>
-                <DataGridTextColumn Binding="{Binding UserInfo}" Header="Клиент" Width="*"/>
-                <DataGridTextColumn Binding="{Binding Phone}" Header="Телефон" Width="*"/>
-
-                <DataGridTextColumn Binding="{Binding TimeSheet.Date, StringFormat='d', ConverterCulture='ru-RU'}" Header="Дата" Width="*"/>
-                <DataGridTextColumn Binding="{Binding TimeSheet.Time, StringFormat='t', ConverterCulture='ru-RU'}" Header="Время" Width="*"/>
-                <!--<DataGridCheckBoxColumn Binding="{Binding Payed}" Header="Оплачен" Width="*"/>-->
-
-
-               
-                <DataGridTemplateColumn Width="auto" Header="Отменить" >
+                <DataGridTextColumn Binding="{Binding Id}" Header="Заказ" />
+                <DataGridTextColumn Binding="{Binding User.GetFIO}" Header="Клиент" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Total, StringFormat='c', ConverterCulture='ru-RU'}" Header="Стоимость" Width="*"/>
+                <DataGridTextColumn Binding="{Binding DateOrder, StringFormat='d', ConverterCulture='ru-RU'}" Header="Дата" Width="*"/>
+                <DataGridTemplateColumn Width="auto" Header="Оплачен">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="BtnDelete" Visibility="{Binding GetVisibility}" Content="{materialDesign:PackIcon Kind=Delete}" Click="BtnDeleteClick" Margin="0"/>
+                            <ToggleButton   Content="NO"   IsChecked="{Binding Paid}"  
+                                            Style="{StaticResource MaterialDesignActionLightToggleButton}"
+                                            ToolTip="Оплачен"  />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="auto" Header="Просмотр">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnEdit"  Content="{materialDesign:PackIcon Kind=Edit}"  Margin="0"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="auto" Header="Удалить">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnDelete"  Content="{materialDesign:PackIcon Kind=Delete}"  Margin="0"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
 
 
             </DataGrid.Columns>

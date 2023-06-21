@@ -82,8 +82,8 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="№ п" Binding="{Binding Id}"/>
               
-                <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat='d', ConverterCulture='ru-RU'}" Width="*"/>
-                <DataGridTextColumn Header="Время" Binding="{Binding Time, StringFormat='t'}" Width="*"/>
+          
+                <DataGridTextColumn Header="Услуга" Binding="{Binding Service.Title}" Width="*"/>
                 <DataGridTextColumn Header="Стоимость" Binding="{Binding Price, StringFormat='c', ConverterCulture='ru-RU'}"/>
                 <!--// <DataGridTextColumn Header="Количество" Binding="{Binding Count}" Width="*"/>-->
             </DataGrid.Columns>

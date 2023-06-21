@@ -23,7 +23,7 @@ namespace QuestWorldApp.Pages
     /// </summary>
     public partial class TimeSheetPage : Page
     {
-        List<TimeSheet> timeSheets = new List<TimeSheet>();
+        List<Pricelist> timeSheets = new List<Pricelist>();
         public TimeSheetPage(Weapon weapon)
         {
             InitializeComponent();
@@ -39,7 +39,7 @@ namespace QuestWorldApp.Pages
         // загрузка данных в DataGrid и ComboBox
         void LoadData(Weapon weapon)
         {
-            timeSheets = ShootingClubBDEntities.GetContext().Pricelists.Where(p => p.WeaponId == weapon.Id).OrderBy(p => p.Date).ThenBy(p => p.Time).ToList();
+            timeSheets = ShootingClubBDEntities.GetContext().Pricelists.Where(p => p.WeaponId == questId).OrderBy(p => p.Weapon.Title).ThenBy(p => p.Price).ToList();
             DtData.ItemsSource = timeSheets;
             ComboQuests.ItemsSource = ShootingClubBDEntities.GetContext().Weapons.OrderBy(p => p.Title).ToList(); ;
             ComboQuests.SelectedIndex = 0;
@@ -52,7 +52,7 @@ namespace QuestWorldApp.Pages
             if (ComboQuests.SelectedIndex >= 0)
             {
                 int questId = Convert.ToInt32(ComboQuests.SelectedValue);
-                timeSheets = ShootingClubBDEntities.GetContext().Pricelists.Where(p => p.WeaponId == questId).OrderBy(p => p.Weapon.Title).ThenBy(p => p.Price).ToList();
+              timeSheets = ShootingClubBDEntities.GetContext().Pricelists.Where(p => p.WeaponId == questId).OrderBy(p => p.Weapon.Title).ThenBy(p => p.Price).ToList();
                 DtData.ItemsSource = timeSheets;
                 GridGood.DataContext = ComboQuests.SelectedItem;
             }
@@ -60,99 +60,99 @@ namespace QuestWorldApp.Pages
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
+        //    try
+        //    {
 
-                Weapon g = ComboQuests.SelectedItem as Weapon;
-            TimeSheetWindow window = new TimeSheetWindow(new TimeSheet(), g);
-            if (window.ShowDialog() == true)
-            {
-                ShootingClubBDEntities.GetContext().TimeSheets.Add(window.currentItem);
-                    ShootingClubBDEntities.GetContext().SaveChanges();
+        //        Weapon g = ComboQuests.SelectedItem as Weapon;
+        //    TimeSheetWindow window = new TimeSheetWindow(new TimeSheet(), g);
+        //    if (window.ShowDialog() == true)
+        //    {
+        //        ShootingClubBDEntities.GetContext().TimeSheets.Add(window.currentItem);
+        //            ShootingClubBDEntities.GetContext().SaveChanges();
 
-                MessageBox.Show("Запись добавлена", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
-                LoadData(g);
-            }
-        }
-            catch
-            {
-                MessageBox.Show("Ошибка");
-            }
+        //        MessageBox.Show("Запись добавлена", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+        //        LoadData(g);
+        //    }
+        //}
+        //    catch
+        //    {
+        //        MessageBox.Show("Ошибка");
+        //    }
 }
 
         private void btnChange_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                Weapon g = ComboQuests.SelectedItem as Weapon;
-                // если ни одного объекта не выделено, выходим
-                if (DtData.SelectedItem == null) return;
-                // получаем выделенный объект
-                TimeSheet selected = DtData.SelectedItem as TimeSheet;
+            //try
+            //{
+            //    Weapon g = ComboQuests.SelectedItem as Weapon;
+            //    // если ни одного объекта не выделено, выходим
+            //    if (DtData.SelectedItem == null) return;
+            //    // получаем выделенный объект
+            //    TimeSheet selected = DtData.SelectedItem as TimeSheet;
 
-                //    double k = selected.Count;
+            //    //    double k = selected.Count;
 
-                TimeSheetWindow window = new TimeSheetWindow(selected, g);
+            //    TimeSheetWindow window = new TimeSheetWindow(selected, g);
 
-                if (window.ShowDialog() == true)
-                {
-                    selected = ShootingClubBDEntities.GetContext().TimeSheets.Find(window.currentItem.Id);
-                    // получаем измененный объект
-                    if (selected != null)
-                    {
+            //    if (window.ShowDialog() == true)
+            //    {
+            //        selected = ShootingClubBDEntities.GetContext().TimeSheets.Find(window.currentItem.Id);
+            //        // получаем измененный объект
+            //        if (selected != null)
+            //        {
 
-                        ShootingClubBDEntities.GetContext().Entry(selected).State = EntityState.Modified;
-                        ShootingClubBDEntities.GetContext().SaveChanges();
-                        // LoadData(g);
+            //            ShootingClubBDEntities.GetContext().Entry(selected).State = EntityState.Modified;
+            //            ShootingClubBDEntities.GetContext().SaveChanges();
+            //            // LoadData(g);
 
-                        MessageBox.Show("Запись изменена", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
-                        LoadData(g);
-                        //ComboGoods.SelectedIndex = -1;
-                    }
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Ошибка");
-            }
+            //            MessageBox.Show("Запись изменена", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+            //            LoadData(g);
+            //            //ComboGoods.SelectedIndex = -1;
+            //        }
+            //    }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Ошибка");
+            //}
 
 
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                Weapon g = ComboQuests.SelectedItem as Weapon;
+//            try
+//            {
+//                Weapon g = ComboQuests.SelectedItem as Weapon;
 
-                // если ни одного объекта не выделено, выходим
-                if (DtData.SelectedItem == null) return;
-                // получаем выделенный объект
-                MessageBoxResult messageBoxResult = MessageBox.Show($"Удалить запись? ", "Удаление", MessageBoxButton.OKCancel,
-MessageBoxImage.Question);
-                if (messageBoxResult == MessageBoxResult.OK)
-                {
-                    TimeSheet deletedItem = DtData.SelectedItem as TimeSheet;
+//                // если ни одного объекта не выделено, выходим
+//                if (DtData.SelectedItem == null) return;
+//                // получаем выделенный объект
+//                MessageBoxResult messageBoxResult = MessageBox.Show($"Удалить запись? ", "Удаление", MessageBoxButton.OKCancel,
+//MessageBoxImage.Question);
+//                if (messageBoxResult == MessageBoxResult.OK)
+//                {
+//                    TimeSheet deletedItem = DtData.SelectedItem as TimeSheet;
 
-                    if (deletedItem.Orders.Count > 0)
-                    {
-                        MessageBox.Show("Ошибка удаления, есть связанные записи", "Error",
-                            MessageBoxButton.OK, MessageBoxImage.Error);
-                        return;
-                    }
+//                    if (deletedItem.Orders.Count > 0)
+//                    {
+//                        MessageBox.Show("Ошибка удаления, есть связанные записи", "Error",
+//                            MessageBoxButton.OK, MessageBoxImage.Error);
+//                        return;
+//                    }
 
-                    ShootingClubBDEntities.GetContext().TimeSheets.Remove(deletedItem);
-                    ShootingClubBDEntities.GetContext().SaveChanges();
+//                    ShootingClubBDEntities.GetContext().TimeSheets.Remove(deletedItem);
+//                    ShootingClubBDEntities.GetContext().SaveChanges();
 
 
-                    LoadData(g);
-                    MessageBox.Show("Запись удалена", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+//                    LoadData(g);
+//                    MessageBox.Show("Запись удалена", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+//                }
+//            }
+//            catch (Exception ex)
+//            {
+//                MessageBox.Show(ex.Message);
+//            }
 
         }
 

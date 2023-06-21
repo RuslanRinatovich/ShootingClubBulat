@@ -93,7 +93,7 @@ namespace QuestWorldApp.Pages
 
                     // проверка, есть ли у товара в таблице о продажах связанные записи
                     // если да, то выбрасывается исключение и удаление прерывается
-                    if (selected.Orders.Count > 0 || selected.Rewiews.Count > 0)
+                    if (selected.Orders.Count > 0)
                         throw new Exception("Ошибка удаления, есть связанные записи");
 
 
@@ -132,7 +132,7 @@ namespace QuestWorldApp.Pages
             // выбор только тех товаров, которые принадлежат данному производителю
             if (ComboUserType.SelectedIndex > 0)
             {
-                currentData = currentData.Where(p => p.RoleId == ((ComboUserType.SelectedItem) as Role).RoleId).ToList();
+                currentData = currentData.Where(p => p.RoleId == ((ComboUserType.SelectedItem) as Role).Id).ToList();
             }
 
 

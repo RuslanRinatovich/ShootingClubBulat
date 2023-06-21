@@ -44,33 +44,26 @@
                   LoadingRow="DataGridGoodLoadingRow">
             <DataGrid.Columns>
 
-                <DataGridTextColumn Binding="{Binding Id}" Header="ID" />
-                <DataGridTextColumn Binding="{Binding TimeSheet.Weapon.Title}" Header="Квест" Width="*"/>
-                <DataGridTextColumn Binding="{Binding TimeSheet.Price, StringFormat='c', ConverterCulture='ru-RU'}" Header="Стоимость" Width="*"/>
-                <DataGridTextColumn Binding="{Binding UserInfo}" Header="Клиент" Width="*"/>
-                <DataGridTextColumn Binding="{Binding Phone}" Header="Телефон" Width="*"/>
-
-                <DataGridTextColumn Binding="{Binding TimeSheet.Date, StringFormat='d', ConverterCulture='ru-RU'}" Header="Дата" Width="*"/>
-                <DataGridTextColumn Binding="{Binding TimeSheet.Time, StringFormat='t', ConverterCulture='ru-RU'}" Header="Время" Width="*"/>
-                <!--<DataGridCheckBoxColumn Binding="{Binding Payed}" Header="Оплачен" Width="*"/>-->
-
-
+                <DataGridTextColumn Binding="{Binding Id}" Header="Заказ" />
+                <DataGridTextColumn Binding="{Binding User.GetFIO}" Header="Клиент" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Total, StringFormat='c', ConverterCulture='ru-RU'}" Header="Стоимость" Width="*"/>
+                <DataGridTextColumn Binding="{Binding DateOrder, StringFormat='d', ConverterCulture='ru-RU'}" Header="Дата" Width="*"/>
                 <DataGridTemplateColumn Width="auto" Header="Оплачен">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <ToggleButton   Content="NO"   IsChecked="{Binding Payed}"  
+                            <ToggleButton   Content="NO"   IsChecked="{Binding Paid}"  
                                             Style="{StaticResource MaterialDesignActionLightToggleButton}"
   ToolTip="Оплачен" Click="ToggleButton_Click" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <!--<DataGridTemplateColumn Width="auto" Header="Редактировать">
+                <DataGridTemplateColumn Width="auto" Header="Просмотр">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button x:Name="BtnEdit"  Content="{materialDesign:PackIcon Kind=Edit}" Click="BtnEdit_Click" Margin="0"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>-->
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Width="auto" Header="Удалить">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
