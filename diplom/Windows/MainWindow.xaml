@@ -1,0 +1,41 @@
+﻿<Window x:Class="ShootingClub.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShootingClub"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="SteelBlue"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="{materialDesign:MaterialDesignFont}"
+        mc:Ignorable="d"
+Title="{Binding ElementName=MainFrame, Path=Content.Title}" Height="450" Width="800" Padding="5"
+        Closing="Window_Closing" Closed="Window_Closed" WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="Window_Loaded">
+    <!--Style="{StaticResource base_window}"-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid /> <!--Background="{StaticResource additional}"-->
+        <!--<Image Source="/Assets/logo.png" HorizontalAlignment="Left" Margin="10"/>-->
+        <TextBlock Text='АИС Стрелковый клуб "Булат"' HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" VerticalAlignment="Top" Margin="25"/>
+        <Frame Grid.Row="1" x:Name="MainFrame" Background="LightBlue" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5">
+            <Button x:Name="BtnBasket" Content="Корзина" Click="BtnBasket_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5">
+            <Button x:Name="BtnServices" Content="Услуги" Click="BtnServices_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
+            <Button x:Name="BtnWeapons" Content="Оружие" Click="BtnWeapons_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
+            <Button x:Name="BtnOrders" Content="Заказы" Click="BtnOrders_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
+            <Button x:Name="BtnUsers" Content="Пользователи" Click="BtnUsers_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
+            <Button x:Name="BtnPricelists" Content="Расценки" Click="BtnPricelists_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
+            <Button x:Name="BtnBack" Content="Назад" Click="BtnBack_Click" Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
+        </StackPanel>
+        <TextBlock x:Name="TbUserName" Height="40" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <Grid Grid.Row="2"/> <!--Background="{StaticResource additional}"-->
+    </Grid>
+</Window>

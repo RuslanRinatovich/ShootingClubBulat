@@ -1,0 +1,67 @@
+﻿<Page x:Class="ShootingClub.Pages.AddOrEditWeaponPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ShootingClub.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="800"
+      Title="Добавление/Редактирование оружия"> <!--Style="{StaticResource base_page}"-->
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <TextBlock Grid.Row="0" Text="Логотип" HorizontalAlignment="Left" Margin="20 10 0 0" 
+                   VerticalAlignment="Top"                  
+                   FontWeight="Bold" />
+                <Button x:Name="BtnLoadPhoto" Content="Загрузить" HorizontalAlignment="Left" Margin="20" Click="BtnLoadPhoto_Click"/>
+            </StackPanel>
+            <TextBlock Grid.Row="1" Text="Название оружия" HorizontalAlignment="Left" Margin="20 0 0 0" 
+                   VerticalAlignment="center"                  
+                   FontWeight="Bold" />
+            <TextBlock Grid.Row="2" Text="Описание оружия" HorizontalAlignment="Left" Margin="20 0 0 0" 
+                   VerticalAlignment="center"                  
+                   FontWeight="Bold" />
+            <TextBlock Grid.Row="3" Text="Масса оружия" HorizontalAlignment="Left" Margin="20 0 0 0" 
+                   VerticalAlignment="center"                  
+                   FontWeight="Bold" />
+            <TextBlock Grid.Row="4" Text="Калибр оружия" HorizontalAlignment="Left" Margin="20 0 0 0" 
+                   VerticalAlignment="center"                  
+                   FontWeight="Bold" />
+            <TextBlock Grid.Row="5" Text="Размер обоймы" HorizontalAlignment="Left" Margin="20 0 0 0" 
+                   VerticalAlignment="center"                  
+                   FontWeight="Bold" />
+            <TextBlock Grid.Row="6" Text="Тип оружия" HorizontalAlignment="Left" Margin="20 0 0 0" 
+                   VerticalAlignment="center"                  
+                   FontWeight="Bold" />
+
+
+            <Image x:Name="WeaponImage" Source="{Binding GetPhoto}" Width="100" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="10 3"/>
+            <TextBox Text="{Binding WeaponName}" Grid.Row="1" Grid.Column="1" Width="300" HorizontalAlignment="Left"/>
+            <TextBox Text="{Binding WeaponDescription}" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Height="80" Grid.Row="2" Grid.Column="1" Width="900" HorizontalAlignment="Left"/>
+            <TextBox Text="{Binding WeaponWeight}" Grid.Row="3" Grid.Column="1" Width="300" HorizontalAlignment="Left"/>
+            <TextBox Text="{Binding WeaponCaliber}" Grid.Row="4" Grid.Column="1" Width="300" HorizontalAlignment="Left"/>
+            <TextBox Text="{Binding WeaponClipSize}" Grid.Row="5" Grid.Column="1" Width="300" HorizontalAlignment="Left"/>
+            <ComboBox x:Name="ComboBoxWeaponType" Height="40" SelectedItem="{Binding WeaponType}" DisplayMemberPath="WeaponTypeName" SelectedValuePath="WeaponTypeID" Grid.Row="6" Grid.Column="1" Width="300" HorizontalAlignment="Left"/>
+            <Button x:Name="BtnSave" Grid.ColumnSpan="2" Content="Сохранить" Grid.Row="8" Click="BtnSave_Click" HorizontalAlignment="Center" Width="150"/>
+        </Grid>
+    </ScrollViewer>
+</Page>
+
+

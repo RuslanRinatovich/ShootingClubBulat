@@ -1,0 +1,116 @@
+﻿<Application x:Class="ShootingClub.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ShootingClub"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             StartupUri="Windows/LoginWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="BlueGrey" SecondaryColor="LightBlue" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <!--<Window [...]
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="{materialDesign:MaterialDesignFont}"
+        [...] >-->
+                    
+            </ResourceDictionary.MergedDictionaries>
+            <!--<Style TargetType="Window" x:Key="base_window">
+                <Setter Property="xmlns:materialDesign" Value="http://materialdesigninxaml.net/winfx/xaml/themes"/>
+                <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}"/>
+                <Setter Property="TextElement.Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                <Setter Property="FontFamily" Value="{materialDesign:MaterialDesignFont}"/>
+                <Setter Property="TextElement.FontWeight" Value="Medium"/>
+                <Setter Property="TextElement.FontSize" Value="14"/>
+                <Setter Property="MinHeight" Value="600"/>
+                <Setter Property="MinWidth" Value="800"/>
+            </Style>-->
+            <!--<SolidColorBrush x:Key="main" Color="#6a777d"/>
+            <SolidColorBrush x:Key="additional" Color="#98a6ad"/>
+            <SolidColorBrush x:Key="akcent" Color="#3e4b52"/>
+
+            --><!--стиль для Windows--><!--
+            <Style TargetType="Window">
+                <Setter Property="Background" Value="{StaticResource main}"/>
+                <Setter Property="FontFamily" Value="Roboto"/>
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
+
+            --><!--стиль для Page-->
+            <!--<Style TargetType="Page" x:Key="base_page">
+                <Setter Property="Background" Value="{StaticResource additional}"/>
+                <Setter Property="FontFamily" Value="Roboto"/>
+                <Setter Property="FontSize" Value="16"/>
+            </Style>-->
+            <!--стиль для ComboBox-->
+            <!--<Style TargetType="ComboBox">
+                <Setter Property="Width" Value="100"/>
+            </Style>
+            --><!--стиль для TextBox-->
+            <!--<Style TargetType="TextBox">
+                <Setter Property="Width" Value="100"/>
+            </Style>-->
+
+        </ResourceDictionary>
+        <!--цвета для соответствию стилю-->
+        
+
+        <!--стиль для TextBox-->
+        <!--<Style TargetType="TextBox">
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Background" Value="{StaticResource main}"/>
+            <Setter Property="Padding" Value="3 0"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>-->
+
+        <!--стиль для Button--><!--
+        <Style TargetType="Button">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="{StaticResource akcent}"/>
+            <Setter Property="Foreground" Value="{StaticResource main}"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+
+        --><!--стиль для TextBlock--><!--
+        <Style TargetType="TextBlock">
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+
+        --><!--стиль для TextBlock-->
+        <!--<Style TargetType="TextBlock" x:Key="item_textblock">
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>-->
+
+        <!--стиль для ComboBoxItem-->
+        <!--<Style TargetType="ComboBoxItem">
+            <Setter Property="Background" Value="{StaticResource main}"/>
+            <Setter Property="Height" Value="40"/>
+        </Style>-->
+
+        <!--стиль для ListViewItem--><!--
+        <Style TargetType="ListViewItem" x:Key="itemListView">
+            --><!--<Setter Property="Background" Value="{Binding GetColor}"/>--><!--
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+        </Style>
+
+        <Style TargetType="DataGridCell">
+            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>-->
+        
+    </Application.Resources>
+</Application>

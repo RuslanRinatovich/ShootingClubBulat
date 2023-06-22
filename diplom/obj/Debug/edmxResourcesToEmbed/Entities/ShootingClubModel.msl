@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ShootingClubModelContainer" CdmEntityContainer="ShootingClubEntities">
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="ShootingClubModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="OrderCreationDateTime" ColumnName="OrderCreationDateTime" />
+          <ScalarProperty Name="OrderFulfillmentDateTime" ColumnName="OrderFulfillmentDateTime" />
+          <ScalarProperty Name="OrderCost" ColumnName="OrderCost" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderServices">
+      <EntityTypeMapping TypeName="ShootingClubModel.OrderService">
+        <MappingFragment StoreEntitySet="OrderService">
+          <ScalarProperty Name="OrderServiceID" ColumnName="OrderServiceID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="PricelistID" ColumnName="PricelistID" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pricelists">
+      <EntityTypeMapping TypeName="ShootingClubModel.Pricelist">
+        <MappingFragment StoreEntitySet="Pricelist">
+          <ScalarProperty Name="PricelistID" ColumnName="PricelistID" />
+          <ScalarProperty Name="WeaponID" ColumnName="WeaponID" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="ShootingClubModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="ShootingClubModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="ServiceDescription" ColumnName="ServiceDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ShootingClubModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ShootingClubModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserLogin" ColumnName="UserLogin" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserSurname" ColumnName="UserSurname" />
+          <ScalarProperty Name="UserPatronymic" ColumnName="UserPatronymic" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Weapons">
+      <EntityTypeMapping TypeName="ShootingClubModel.Weapon">
+        <MappingFragment StoreEntitySet="Weapon">
+          <ScalarProperty Name="WeaponID" ColumnName="WeaponID" />
+          <ScalarProperty Name="WeaponName" ColumnName="WeaponName" />
+          <ScalarProperty Name="WeaponDescription" ColumnName="WeaponDescription" />
+          <ScalarProperty Name="WeaponWeight" ColumnName="WeaponWeight" />
+          <ScalarProperty Name="WeaponCaliber" ColumnName="WeaponCaliber" />
+          <ScalarProperty Name="WeaponClipSize" ColumnName="WeaponClipSize" />
+          <ScalarProperty Name="WeaponTypeID" ColumnName="WeaponTypeID" />
+          <ScalarProperty Name="WeaponImage" ColumnName="WeaponImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WeaponTypes">
+      <EntityTypeMapping TypeName="ShootingClubModel.WeaponType">
+        <MappingFragment StoreEntitySet="WeaponType">
+          <ScalarProperty Name="WeaponTypeID" ColumnName="WeaponTypeID" />
+          <ScalarProperty Name="WeaponTypeName" ColumnName="WeaponTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

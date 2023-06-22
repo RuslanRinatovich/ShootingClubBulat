@@ -1,0 +1,136 @@
+﻿<Page x:Class="ShootingClub.Pages.OrderServicePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ShootingClub.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OrderServicePage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="34"/>
+            <RowDefinition Height="34"/>
+            <RowDefinition Height="34"/>
+            <RowDefinition Height="34"/>
+            <RowDefinition Height="34"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid  Grid.ColumnSpan="2" />
+        <!--Background="{StaticResource additional}"-->
+        <!--<Image Source="/SportApp;component/Resources/logo.png" 
+               Margin="10" 
+               HorizontalAlignment="Left" />-->
+        <TextBlock Grid.Row="0" Text=""  Grid.ColumnSpan="2"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   
+                   FontSize="20"
+                   FontWeight="Bold" />
+        <!--Background="{StaticResource additional}"-->
+        <TextBlock  Text="Заказ №"  Grid.Row="1" Grid.Column="0" 
+                    Grid.ColumnSpan="2"  x:Name="TextBlockOrderNumber"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="20"
+                   FontWeight="Bold" />
+
+        <TextBlock Text="Вид услуги"  Grid.Row="2" Grid.Column="0" 
+                   HorizontalAlignment="Left" Margin="60 0 0 0" 
+                   VerticalAlignment="Center"
+                  
+                   FontWeight="Bold" />
+        <!--Style="{StaticResource item_textblock}"-->
+        <ComboBox x:Name="ComboBoxService" Grid.Row="2" Grid.Column="1" 
+                   VerticalAlignment="Center" HorizontalAlignment="Left"
+                   Width="140"
+                   SelectedItem="{Binding Service}"
+                  DisplayMemberPath="ServiceName"
+                  SelectedValuePath="ServiceID"
+                   FontWeight="Bold" SelectionChanged="ComboBoxService_SelectionChanged"  />
+        <!--Style="{StaticResource item_textblock}"-->
+        <TextBlock Text="Тип оружия"  Grid.Row="3" Grid.Column="0" 
+                   HorizontalAlignment="Left" Margin="60 0 0 0" 
+                   VerticalAlignment="Center"
+                  
+                   FontWeight="Bold" />
+        <!--Style="{StaticResource item_textblock}"-->
+        <ComboBox x:Name="ComboBoxWeaponType" Grid.Row="3"
+                   Grid.Column="1"  VerticalAlignment="Center" Width="140"
+                   HorizontalAlignment="Left" 
+                  SelectedItem="{Binding WeaponType}"
+                  DisplayMemberPath="WeaponTypeName"
+                  SelectedValuePath="WeaponTypeID"
+                   
+                   FontWeight="Bold" SelectionChanged="ComboBoxWeaponType_SelectionChanged"  />
+        <TextBlock Text="Оружие"  Grid.Row="4" Grid.Column="0" 
+                   HorizontalAlignment="Left" Margin="60 0 0 0" 
+                   VerticalAlignment="center"
+                   
+                   FontWeight="Bold" />
+        <!--Style="{StaticResource item_textblock}"-->
+        <!--<materialDesign:TimePicker Grid.Column="1" 
+                                   HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" Width="140" Is24Hours="True" IsManipulationEnabled="True">
+        </materialDesign:TimePicker>-->
+        <ComboBox x:Name="ComboBoxWeapon" Grid.Row="4" Grid.Column="1" Width="140" HorizontalAlignment="Left"
+                  SelectedItem="{Binding Weapon}"
+                  DisplayMemberPath="WeaponName"
+                  SelectedValuePath="WeaponID" SelectionChanged="ComboBoxWeapon_SelectionChanged">
+
+        </ComboBox>
+        <TextBlock Text="Арендуемое время (час)"  Grid.Row="5" Grid.Column="0" 
+                   HorizontalAlignment="Left" Margin="60 0 0 0" 
+                   VerticalAlignment="Center"
+                  
+                   FontWeight="Bold" />
+        <!--Style="{StaticResource item_textblock}"-->
+        <TextBox x:Name="TextBoxTimeAmount" Grid.Row="5"
+                   Grid.Column="1"  VerticalAlignment="Center" Width="140"
+                   HorizontalAlignment="Left" 
+                   
+                   FontWeight="Bold" TextChanged="TextBoxTimeAmount_TextChanged"   />
+        <TextBlock Grid.Row="6" HorizontalAlignment="Left" Margin="60 0 0 0" 
+                   VerticalAlignment="Center"  FontWeight="Bold" Text="Итого:"/>
+
+        <TextBlock x:Name="TextBoxTotalCost" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" 
+                   VerticalAlignment="Center"  FontWeight="Bold" Text=""/>
+
+        <!--<Grid Grid.Row="5" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                    <TextBlock x:Name="TextBlockServiceName" Text="{Binding ServiceName, StringFormat={}Наименование: {0}}" Margin="3" FontSize="16"/>
+                <TextBlock x:Name="TextBlockServiceDescription" Text="{Binding ServiceDescription,StringFormat={}Описание: {0}}" TextWrapping="Wrap" Margin="3" FontSize="16"/>
+                </StackPanel>
+            <TextBlock x:Name="TextBlockServicePrice" Grid.Column="1" Text="{Binding ServicePrice, StringFormat={}{0:f0} p.}" Margin="10 0" VerticalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+            </Grid>-->
+
+
+
+
+        <!--<TextBlock x:Name="TextBlockTotalCost" Grid.Row="7" Grid.ColumnSpan="2"/>-->
+        <StackPanel Orientation="Horizontal" Grid.Row="8"
+                    Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <Button Width="100" 
+                    Content="Закрыть" 
+                    x:Name="BtnClose" 
+                    Click="BtnCloseClick"/>
+
+            <Button x:Name="BtnCreateOrder"  Content="Добавить" 
+                    Width="100"  Click="BtnAddToBasketClick"/>
+        </StackPanel>
+
+
+    </Grid>
+
+</Page>

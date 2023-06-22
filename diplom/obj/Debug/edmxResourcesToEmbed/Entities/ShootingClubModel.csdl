@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShootingClubModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderCreationDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OrderFulfillmentDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OrderCost" Type="Decimal" Precision="20" Scale="2" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Order_User" FromRole="Order" ToRole="User" />
+    <NavigationProperty Name="OrderServices" Relationship="Self.FK_OrderService_Order" FromRole="Order" ToRole="OrderService" />
+  </EntityType>
+  <EntityType Name="OrderService">
+    <Key>
+      <PropertyRef Name="OrderServiceID" />
+    </Key>
+    <Property Name="OrderServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="PricelistID" Type="Int32" Nullable="false" />
+    <Property Name="Count" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_OrderService_Order" FromRole="OrderService" ToRole="Order" />
+    <NavigationProperty Name="Pricelist" Relationship="Self.FK_OrderService_Pricelist" FromRole="OrderService" ToRole="Pricelist" />
+  </EntityType>
+  <EntityType Name="Pricelist">
+    <Key>
+      <PropertyRef Name="PricelistID" />
+    </Key>
+    <Property Name="PricelistID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WeaponID" Type="Int32" Nullable="false" />
+    <Property Name="ServiceID" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="20" Scale="2" Nullable="false" />
+    <NavigationProperty Name="OrderServices" Relationship="Self.FK_OrderService_Pricelist" FromRole="Pricelist" ToRole="OrderService" />
+    <NavigationProperty Name="Service" Relationship="Self.FK_Pricelist_Service" FromRole="Pricelist" ToRole="Service" />
+    <NavigationProperty Name="Weapon" Relationship="Self.FK_Pricelist_Weapon" FromRole="Pricelist" ToRole="Weapon" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_User_Role" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ServiceID" />
+    </Key>
+    <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ServiceDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Pricelists" Relationship="Self.FK_Pricelist_Service" FromRole="Service" ToRole="Pricelist" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserLogin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserSurname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserPatronymic" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Order_User" FromRole="User" ToRole="Order" />
+    <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="Weapon">
+    <Key>
+      <PropertyRef Name="WeaponID" />
+    </Key>
+    <Property Name="WeaponID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WeaponName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WeaponDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WeaponWeight" Type="Int32" Nullable="false" />
+    <Property Name="WeaponCaliber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WeaponClipSize" Type="Int16" Nullable="false" />
+    <Property Name="WeaponTypeID" Type="Int32" Nullable="false" />
+    <Property Name="WeaponImage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Pricelists" Relationship="Self.FK_Pricelist_Weapon" FromRole="Weapon" ToRole="Pricelist" />
+    <NavigationProperty Name="WeaponType" Relationship="Self.FK_Weapon_WeaponType" FromRole="Weapon" ToRole="WeaponType" />
+  </EntityType>
+  <EntityType Name="WeaponType">
+    <Key>
+      <PropertyRef Name="WeaponTypeID" />
+    </Key>
+    <Property Name="WeaponTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WeaponTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Weapons" Relationship="Self.FK_Weapon_WeaponType" FromRole="WeaponType" ToRole="Weapon" />
+  </EntityType>
+  <Association Name="FK_Order_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderService_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OrderService" Type="Self.OrderService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="OrderService">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderService_Pricelist">
+    <End Role="Pricelist" Type="Self.Pricelist" Multiplicity="1" />
+    <End Role="OrderService" Type="Self.OrderService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pricelist">
+        <PropertyRef Name="PricelistID" />
+      </Principal>
+      <Dependent Role="OrderService">
+        <PropertyRef Name="PricelistID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pricelist_Service">
+    <End Role="Service" Type="Self.Service" Multiplicity="1" />
+    <End Role="Pricelist" Type="Self.Pricelist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="ServiceID" />
+      </Principal>
+      <Dependent Role="Pricelist">
+        <PropertyRef Name="ServiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pricelist_Weapon">
+    <End Role="Weapon" Type="Self.Weapon" Multiplicity="1" />
+    <End Role="Pricelist" Type="Self.Pricelist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Weapon">
+        <PropertyRef Name="WeaponID" />
+      </Principal>
+      <Dependent Role="Pricelist">
+        <PropertyRef Name="WeaponID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Weapon_WeaponType">
+    <End Role="WeaponType" Type="Self.WeaponType" Multiplicity="1" />
+    <End Role="Weapon" Type="Self.Weapon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WeaponType">
+        <PropertyRef Name="WeaponTypeID" />
+      </Principal>
+      <Dependent Role="Weapon">
+        <PropertyRef Name="WeaponTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ShootingClubEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="OrderServices" EntityType="Self.OrderService" />
+    <EntitySet Name="Pricelists" EntityType="Self.Pricelist" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="Services" EntityType="Self.Service" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="Weapons" EntityType="Self.Weapon" />
+    <EntitySet Name="WeaponTypes" EntityType="Self.WeaponType" />
+    <AssociationSet Name="FK_Order_User" Association="Self.FK_Order_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderService_Order" Association="Self.FK_OrderService_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderService" EntitySet="OrderServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderService_Pricelist" Association="Self.FK_OrderService_Pricelist">
+      <End Role="Pricelist" EntitySet="Pricelists" />
+      <End Role="OrderService" EntitySet="OrderServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pricelist_Service" Association="Self.FK_Pricelist_Service">
+      <End Role="Service" EntitySet="Services" />
+      <End Role="Pricelist" EntitySet="Pricelists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pricelist_Weapon" Association="Self.FK_Pricelist_Weapon">
+      <End Role="Weapon" EntitySet="Weapons" />
+      <End Role="Pricelist" EntitySet="Pricelists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Weapon_WeaponType" Association="Self.FK_Weapon_WeaponType">
+      <End Role="WeaponType" EntitySet="WeaponTypes" />
+      <End Role="Weapon" EntitySet="Weapons" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
