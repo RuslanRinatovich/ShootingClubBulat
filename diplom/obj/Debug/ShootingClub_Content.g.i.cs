@@ -9,6 +9,7 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("entities/shootingclubmodel.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("entities/shootingclubmodel.edmx.sql")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("entities/shootingclubmodel.tt")]
 
 

@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-E:\diplom\obj\Debug\
+C:\DIPLOMS\Хабибуллин\diplom\obj\Debug\
 ShootingClub
 none
 false
 DEBUG;TRACE
-E:\diplom\App.xaml
+C:\DIPLOMS\Хабибуллин\diplom\App.xaml
 13-598499898
 21559275217
 35-1284415802
-21-858065276
+212055938916
 Pages\AddOrEditPricelistPage.xaml;Pages\AddOrEditServicePage.xaml;Pages\AddOrEditUserPage.xaml;Pages\AddOrEditWeaponPage.xaml;Pages\CreateOrderPage.xaml;Pages\OrderServicePage.xaml;Pages\OrdersPage.xaml;Pages\PricelistsPage.xaml;Pages\ServicesPage.xaml;Pages\UsersPage.xaml;Pages\WeaponsPage.xaml;Windows\LoginWIndow.xaml;Windows\MainWindow.xaml;
 
 False

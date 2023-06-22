@@ -7,7 +7,7 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-        Title="Расписание" >
+        Title="Прайс-лист" >
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -21,7 +21,7 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
-            <TextBlock Text="Выберите квест"     Style="{StaticResource MaterialDesignSubtitle2TextBlock}" />
+            <TextBlock Text="Выберите оружие"     Style="{StaticResource MaterialDesignSubtitle2TextBlock}" />
             <ComboBox HorizontalAlignment="Stretch" x:Name="ComboQuests" Width="400"
                           SelectionChanged="ComboGoodsSelectionChanged"
                            SelectedValuePath="Id"

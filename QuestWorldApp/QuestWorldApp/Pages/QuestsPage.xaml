@@ -8,7 +8,7 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Квесты" IsVisibleChanged="Page_IsVisibleChanged"
+      Title="Оружие" IsVisibleChanged="Page_IsVisibleChanged"
      
       >
     <Grid>
@@ -21,7 +21,7 @@
         <WrapPanel Grid.Row="0" HorizontalAlignment="Stretch"  >
 
 
-            <TextBox Width="275" x:Name="TBoxSearch"  materialDesign:HintAssist.Hint="Введите название квеста" TextChanged="TBoxSearch_TextChanged"
+            <TextBox Width="275" x:Name="TBoxSearch"  materialDesign:HintAssist.Hint="Введите название оружия" TextChanged="TBoxSearch_TextChanged"
                          />
           
 
@@ -124,7 +124,7 @@
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
             
             <Button x:Name="BtnCategories" 
-                 Click="BtnCategories_Click" ToolTip="Категории квестов">
+                 Click="BtnCategories_Click" ToolTip="Категории оружия">
                 <materialDesign:PackIcon  Kind="FormatListBulletedType" Padding="0"/>
 
             </Button>

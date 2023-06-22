@@ -7,7 +7,7 @@
                 xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:QuestWorldApp.Windows"
         mc:Ignorable="d"
-        Title="Категория квеста" Height="160" Width="400" 
+        Title="Категория оружия" Height="160" Width="400" 
 
     WindowStartupLocation="CenterScreen" >
     <Grid>
